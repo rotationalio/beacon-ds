@@ -52,3 +52,10 @@ yarn workspace @rotationalio/beacon-storybook storybook
 
 A compiled storybook can be found also [here](https://rotational.io).
 
+
+## Packages used 
+
+ - tailwind css 
+ - cva (class-variance-authority)
+ - clsx
+ - tailwind-merge 
