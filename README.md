@@ -1,7 +1,17 @@
 <div>
-  <h1 align="center"> Beacon Design system v1  🎨</</h1>
+  <h1 align="center">Beacon design system (experimental) 🎨</h1>
+  
+  <div align="center">
+    <strong>
+      Design system based on style dictionary on top of tailwind and styled component
+    </strong>
+  </div>
 
-<div>
+  <div>
+
+  <div>
+
+</div>
 
 <hr />
 
@@ -23,13 +33,13 @@ Some packages need to be built before consuming them, like the `foundation`, whi
 
 ```bash
 yarn workspace @rotationalio/beacon-foundation build # Build the foundation package
-yarn workspace @rotationalio/beacon-core build # Build the core package
+yarn workspace @rotationalio/beacon-core build # Build the react package
 ```
 
 ## System Requirements
 
 - git
-- NodeJS `>=16.0.0` 
+- NodeJS `>=16.0.0`
 - yarn v3
 
 ## Run Storybook
@@ -41,3 +51,4 @@ yarn workspace @rotationalio/beacon-storybook storybook
 ```
 
 A compiled storybook can be found also [here](https://rotational.io).
+
