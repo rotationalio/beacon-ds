@@ -12,7 +12,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         className={[
-          'beacon-bg-primary-500 hover:beacon-bg-primary-700',
+          'beacon-bg-primary-300 hover:beacon-bg-primary-700',
           'active:beacon-bg-primary-800 beacon-text-neutral-white',
           'beacon-py-8 beacon-px-[20px]',
           'beacon-rounded-large',
