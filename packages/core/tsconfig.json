@@ -4,8 +4,13 @@
     "baseUrl": "./src",
     "outDir": "./lib",
     "downlevelIteration": true,
-    "target": "es3",
+    "target": "ESNext",
     "jsx": "react-jsx"
   },
+  // "paths": {
+  //   "@/components/*": ["components/*"],
+  //   "@/hooks/*": ["hooks/*"],
+  //   "@/utils/*": ["utils/*"],
+  // },
   "include": ["./src", "./__tests__"]
 }

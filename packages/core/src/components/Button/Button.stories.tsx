@@ -1,5 +1,5 @@
-// import { Button, ButtonProps } from '@rotationalio/beacon-core';
-import { Button } from '@rotationalio/beacon-core/src/Button';
+import { Button } from '.';
+
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {

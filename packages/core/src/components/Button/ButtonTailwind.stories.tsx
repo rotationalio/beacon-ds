@@ -1,4 +1,4 @@
-import { Button } from '@rotationalio/beacon-core/src/ButtonTailwind';
+import { Button } from './ButtonTailwind';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import '@rotationalio/beacon-core/lib/style.css';
 
