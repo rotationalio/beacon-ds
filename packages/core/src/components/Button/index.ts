@@ -1,5 +1,2 @@
-export * from './Button';
-export { default as TwButton } from './ButtonTailwind';
-export * from './IconButton';
+export { default } from './Button';
 export type { ButtonProps } from './Button';
-export type { IconButtonProps } from './IconButton';

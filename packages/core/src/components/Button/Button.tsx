@@ -1,50 +1,37 @@
-import { tokens } from '@rotationalio/beacon-foundation';
-import styled from 'styled-components';
-import { forwardRef } from 'react';
+import { type VariantProps } from 'class-variance-authority';
+import { ReactNode, useRef } from 'react';
+import { type AriaButtonProps, useButton } from 'react-aria';
+import { button } from './Button.style';
+import { Color, Size } from '@types';
 
-export interface ButtonProps extends React.ComponentProps<'button'> {
-  /** If button is in disabled state */
-  disabled?: boolean;
-  /** Loading state */
-  loading?: boolean;
-  /** Color based on the color props */
-  color: keyof typeof tokens.colors;
+export type ButtonProps = {
+  children: ReactNode;
+  color?: Color;
+  size?: Size;
+  className?: string;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
+  tabIndex?: number;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+} & Omit<VariantProps<typeof button>, 'intent' | 'size'> &
+  AriaButtonProps<'button'>;
+
+function Button(props: ButtonProps) {
+  const ref = useRef(null);
+  const { children, color, size, className, leftIcon, rightIcon } = props;
+  const { buttonProps } = useButton(props, ref);
+
+  return (
+    <button
+      className={button({ intent: color, size, className })}
+      {...buttonProps}
+      ref={ref}
+    >
+      {leftIcon && <span className="beacon-pr-1">{leftIcon}</span>}
+      {children}
+      {rightIcon && <span className="beacon-pl-1">{rightIcon}</span>}
+    </button>
+  );
 }
-
-const ButtonStyled = styled.button<ButtonProps>`
-  /* Static styles */
-  all: unset;
-  cursor: pointer;
-  padding: 8px 20px;
-  &:disabled {
-    opacity: 40%;
-  }
-  /* Inherit from design tokens */
-  transition: ${tokens.animations.default.value};
-  color: ${tokens.colors.neutral.white.value};
-  border-radius: ${tokens.radius.large.value};
-  background-color: ${(props) => tokens.colors[props.color][500].value};
-  &:hover {
-    background-color: ${(props) => tokens.colors[props.color][700].value};
-  }
-  &:active {
-    background-color: ${(props) => tokens.colors[props.color][800].value};
-  }
-`;
-
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ disabled, loading, color = 'primary', ...rest }, ref) => {
-    return (
-      <ButtonStyled
-        {...rest}
-        ref={ref}
-        color={color}
-        disabled={disabled || loading}
-      />
-    );
-  }
-);
-
-Button.displayName = 'Button';
 
 export default Button;
