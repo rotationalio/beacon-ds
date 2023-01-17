@@ -4,8 +4,14 @@
     "baseUrl": "./src",
     "outDir": "./lib",
     "downlevelIteration": true,
-    "target": "ES2022",
+    "target": "ESNext",
     "jsx": "react-jsx"
   },
-  "include": ["./src", "./__tests__"]
+  // "paths": {
+  //   "@/components/*": ["components/*"],
+  //   "@/hooks/*": ["hooks/*"],
+  //   "@/utils/*": ["utils/*"],
+  // },
+  "include": ["./src", "./__tests__"],
+  // "exclude": ["./src/**/*.stories.tsx", "./src/**/*.stories.ts", "./src/**/*.test.tsx", "./src/**/*.test.ts", "./src/**/*.spec.tsx", "./src/**/*.spec.ts"]
 }

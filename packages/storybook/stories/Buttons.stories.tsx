@@ -1,4 +1,4 @@
-import { Button } from '@rotationalio/beacon-core/src';
+import { Button } from '@rotationalio/beacon-core';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
