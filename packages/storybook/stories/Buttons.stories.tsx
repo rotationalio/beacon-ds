@@ -1,9 +1,4 @@
-<<<<<<<< HEAD:packages/core/src/components/Button/Button.stories.tsx
-import { Button } from '.';
-
-========
-import { Button } from '@rotationalio/beacon-core/src';
->>>>>>>> origin/master:packages/storybook/stories/Buttons.stories.tsx
+import { Button } from '@rotationalio/beacon-core';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
