@@ -8,7 +8,7 @@
     "lib"
   ],
   "scripts": {
-    "build": "yarn build:css && tsc",
+    "build": "rm -rf lib && yarn build:css && tsc",
     "watch:css": "npx tailwindcss -i ./src/style.css -o ./lib/style.css --watch",
     "build:css": "npx tailwindcss -i ./src/style.css -o ./lib/style.css",
     "test": "jest"
