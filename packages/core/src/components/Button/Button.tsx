@@ -2,7 +2,7 @@ import { type VariantProps } from 'class-variance-authority';
 import { ReactNode, useRef } from 'react';
 import { type AriaButtonProps, useButton } from 'react-aria';
 import { button } from './Button.styles';
-import { Color, Size } from './types';
+import { Color, Size } from '../../types';
 
 export type ButtonProps = {
   children: ReactNode;
