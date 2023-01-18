@@ -20,3 +20,27 @@ Default.args = {
   rightIcon: <>😇</>,
   isDisabled: false,
 };
+
+export const Primary = Template.bind({});
+Primary.args = {
+  ...Default.args,
+  color: 'primary',
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  ...Default.args,
+  color: 'secondary',
+};
+
+export const Warning = Template.bind({});
+Warning.args = {
+  ...Default.args,
+  color: 'warning',
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  ...Default.args,
+  color: 'error',
+};
