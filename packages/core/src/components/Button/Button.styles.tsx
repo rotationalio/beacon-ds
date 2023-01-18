@@ -1,36 +1,31 @@
 import { cva } from 'class-variance-authority';
 
-export const button = cva(
-  [
-    'beacon-font-regular beacon-rounded-lg beacon-rounded-full beacon-px-3 beacon-py-2',
-  ],
-  {
-    variants: {
-      intent: {
-        primary: [
-          'beacon-text-white beacon-text-xs beacon-bg-primary-900',
-          'disabled:beacon-bg-primary-700',
-          'hover:beacon-bg-primary-700',
-          'beacon-transition beacon-duration-300 beacon-ease-out',
-        ],
-        secondary: [
-          'beacon-text-white beacon-text-xs beacon-bg-secondary-900',
-          'disabled:beacon-bg-secondary-700',
-          'hover:beacon-bg-secondary-700',
-          'beacon-transition beacon-duration-300 beacon-ease-out',
-        ],
-        error: ['beacon-text-white beacon-text-xs beacon-bg-danger-500'],
-        warning: ['beacon-text-white beacon-text-xs beacon-bg-warning-500'],
-      },
-      size: {
-        small: ['beacon-text-xs', 'beacon-py-1', 'beacon-px-2'],
-        medium: ['beacon-text-sm', 'beacon-py-3', 'beacon-px-4'],
-        large: ['beacon-text-base', 'beacon-py-4', 'beacon-px-7'],
-      },
+export const button = cva(['font-regular rounded-lg rounded-full px-2 py-2'], {
+  variants: {
+    intent: {
+      primary: [
+        'text-white text-xs bg-primary',
+        'disabled:bg-primary-70',
+        'hover:bg-primary-70',
+        'transition duration-300 ease-out',
+      ],
+      secondary: [
+        'text-white text-xs bg-secondary-100',
+        'disabled:bg-secondary-70',
+        'hover:bg-secondary-70',
+        'transition duration-300 ease-out',
+      ],
+      error: ['text-white text-xs bg-danger-50'],
+      warning: ['text-white text-xs bg-warning-50'],
     },
-    defaultVariants: {
-      intent: 'primary',
-      size: 'medium',
+    size: {
+      small: ['text-xs', 'py-1', 'px-2'],
+      medium: ['text-sm', 'py-3', 'px-4'],
+      large: ['text-base', 'py-4', 'px-7'],
     },
-  }
-);
+  },
+  defaultVariants: {
+    intent: 'primary',
+    size: 'medium',
+  },
+});
