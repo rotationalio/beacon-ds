@@ -15,8 +15,10 @@
     "removeComments": false,
     "sourceMap": true,
     "module": "ESNext",
-    "lib": ["esnext", "dom"],
+    "jsx": "react-jsx",
+    "lib": ["ESNext", "dom"],
     "baseUrl": ".",
+    "outDir": "lib",
     "paths": {
       "@rotationalio/*": ["packages/*/lib"]
     }

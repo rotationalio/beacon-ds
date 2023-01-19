@@ -6,7 +6,10 @@
     "build": "yarn build:token && yarn build:core ",
     "build:core": "yarn workspace @rotationalio/beacon-core build",
     "build:token": "yarn workspace @rotationalio/beacon-foundation build",
-    "storybook": "yarn workspace @rotationalio/beacon-storybook storybook"
+    "storybook": "yarn workspace @rotationalio/beacon-storybook storybook",
+    "docs": "yarn workspace @rotationalio/beacon-docs build",
+    "dev:docs": "yarn workspace @rotationalio/beacon-docs dev",
+    "start:docs": "yarn workspace @rotationalio/beacon-docs start"
   },
   "private": true,
   "workspaces": [
