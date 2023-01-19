@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Label = styled.label(() => {
+export const StyledLabel = styled.label(() => {
   return {
     '&[aria-required=true]::after': {
       content: "'*'",
@@ -9,3 +9,5 @@ export const Label = styled.label(() => {
     },
   };
 });
+
+export default StyledLabel;
