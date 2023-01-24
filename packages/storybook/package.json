@@ -1,7 +1,6 @@
 {
   "name": "@rotationalio/beacon-storybook",
   "packageManager": "yarn@3.2.1",
-  "private": true,
   "dependencies": {
     "@rotationalio/beacon-core": "workspace:^",
     "@rotationalio/beacon-foundation": "workspace:^"
