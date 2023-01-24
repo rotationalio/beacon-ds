@@ -1,28 +1,39 @@
-name: Release
+name: "Release Workflow"
 on:
-  push:
-    branches:
-      - main # or master
+  # No auto run
+  workflow_dispatch:
+
+permissions:
+  contents: write # for checkout and tag
+  pull-requests: write # for comments
+  packages: write # for publish
+
 jobs:
-  release:
+  test-and-release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          # This makes action fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
+          #token: ${{ secrets.OUR_SECRET_TOKEN }}
+      - uses: actions/setup-node@v2
         with:
-          version: 14.x
-      - name: Install Dependencies
+          node-version: lts/*
+      - name: Install packages
         run: yarn
+      - name: Build packages 
+        run: yarn build
+      - name: Run our tests
+        run: yarn test
+      - name: Bumb versions and publish with changesets
+        run: |
+          # Bump versions
+          yarn changeset version
+          # Publish to npm 
+           yarn changeset publish
+          # Need to change slightly, as there is a known issue with workspace:^ versioning
+          # Issue: https://github.com/changesets/changesets/issues/432
+          git status
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # Ensure to have this set up under GitHub secrets
-      - name: Create Release Pull Request or Publish to npm
-        uses: changesets/action@master
-        with:
-          publish: yarn release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Ensure to have this set up under GitHub secrets
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

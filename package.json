@@ -12,9 +12,9 @@
     "start:docs": "yarn workspace @rotationalio/beacon-docs start",
     "changeset": "changeset",
     "prerelease": "yarn run build && yarn run test",
-    "release": "yarn run prerelease && changeset publish"
+    "release": "yarn run prerelease && changeset publish",
+    "test": "yarn workspace @rotationalio/beacon-core test"
   },
-  "private": true,
   "workspaces": [
     "packages/*"
   ],
