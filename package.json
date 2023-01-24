@@ -9,7 +9,10 @@
     "storybook": "yarn workspace @rotationalio/beacon-storybook storybook",
     "docs": "yarn workspace @rotationalio/beacon-docs build",
     "dev:docs": "yarn workspace @rotationalio/beacon-docs dev",
-    "start:docs": "yarn workspace @rotationalio/beacon-docs start"
+    "start:docs": "yarn workspace @rotationalio/beacon-docs start",
+    "changeset": "changeset",
+    "prerelease": "yarn run build && yarn run test",
+    "release": "yarn run prerelease && changeset publish"
   },
   "private": true,
   "workspaces": [

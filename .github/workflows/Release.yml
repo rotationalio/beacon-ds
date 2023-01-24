@@ -1,39 +1,28 @@
-name: "Release Workflow"
+name: Release
 on:
-  # No auto run
-  workflow_dispatch:
-
-permissions:
-  contents: write # for checkout and tag
-  pull-requests: write # for comments
-  packages: write # for publish
-
+  push:
+    branches:
+      - main # or master
 jobs:
-  test-and-release:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
+          # This makes action fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
-          token: ${{ secrets.OUR_SECRET_TOKEN }}
-      - uses: actions/setup-node@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
         with:
-          node-version: lts/*
-      - name: Install packages
+          version: 14.x
+      - name: Install Dependencies
         run: yarn
-      - name: Build packages in order
-        run: yarn workspace @rotationalio/beacon-foundation build && yarn workspace @rotationalio/beacon-core build
-      - name: Run our tests
-        run: yarn workspace @rotationalio/beacon-core test
-      - name: Bumb versions and publish with changesets
-        run: |
-          # Bump versions
-          yarn changeset version
-          # Publish to npm (not configured in our case)
-          # yarn changeset publish
-          # Need to change slightly, as there is a known issue with workspace:^ versioning
-          # Issue: https://github.com/changesets/changesets/issues/432
-          git status
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          YOUR_REGISTRY_TOKEN: ${{ secrets.YOUR_REGISTRY_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # Ensure to have this set up under GitHub secrets
+      - name: Create Release Pull Request or Publish to npm
+        uses: changesets/action@master
+        with:
+          publish: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Ensure to have this set up under GitHub secrets
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} 
