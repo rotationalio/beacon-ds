@@ -6,5 +6,5 @@
     "downlevelIteration": true,
     "jsx": "react-jsx"
   },
-  "include": ["./stories", "stories/Card.stories.tsx]
+  "include": ["./stories", "stories/Card.stories.tsx"]
 }

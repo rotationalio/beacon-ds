@@ -5,7 +5,10 @@
     "outDir": "./lib",
     "downlevelIteration": true,
     "target": "ES2022",
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "skipLibCheck": true
+
   },
-  "include": ["./src", "./__tests__"]
+  "include": ["./src", "./__tests__"],
+  "exclude": ["./node_modules"]
 }
