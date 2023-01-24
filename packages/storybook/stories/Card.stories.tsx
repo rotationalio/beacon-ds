@@ -11,7 +11,7 @@ const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  children: 'Card',
+  children: 'Content goes here',
   containerClasses: 'bg-white shadow-lg rounded-lg',
   contentClasses: 'p-4',
 } as CardProps;
