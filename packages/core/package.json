@@ -1,7 +1,7 @@
 {
-  "name": "@rotationalio/beacon-core",
+  "name": "@rotational/beacon-core",
   "packageManager": "yarn@3.2.1",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "files": [
@@ -14,7 +14,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@rotationalio/beacon-foundation": "workspace:^",
+    "@rotational/beacon-foundation": "workspace:^",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

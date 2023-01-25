@@ -30,7 +30,7 @@ jobs:
           # Bump versions
           yarn changeset version
           # Publish to npm 
-           yarn changeset publish
+           yarn changeset 
           # Need to change slightly, as there is a known issue with workspace:^ versioning
           # Issue: https://github.com/changesets/changesets/issues/432
           git status

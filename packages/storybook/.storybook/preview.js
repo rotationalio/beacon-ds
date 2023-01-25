@@ -1,4 +1,4 @@
-import '@rotationalio/beacon-core/lib/style.css';
+import '@rotational/beacon-core/lib/style.css';
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   // layout: 'centered',

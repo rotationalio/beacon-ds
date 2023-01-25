@@ -1,6 +1,6 @@
 import Checkbox, {
   CheckboxProps,
-} from '@rotationalio/beacon-core/src/components/Checkbox';
+} from '@rotational/beacon-core/src/components/Checkbox';
 import { Meta, Story } from '@storybook/react';
 import { useState } from 'react';
 

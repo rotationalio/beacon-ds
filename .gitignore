@@ -110,3 +110,13 @@ dist
 
 packages/**/lib/
 .yarn/cache
+
+# _release directory
+
+.yarn/*
+**/_release
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

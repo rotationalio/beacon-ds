@@ -32,8 +32,8 @@ Run `yarn` to install the node packages
 Some packages need to be built before consuming them, like the `foundation`, which will distribute the design tokens to the rest of the packages. To build the packages execute:
 
 ```bash
-yarn workspace @rotationalio/beacon-foundation build # Build the foundation package
-yarn workspace @rotationalio/beacon-core build # Build the react package
+yarn workspace @rotational/beacon-foundation build # Build the foundation package
+yarn workspace @rotational/beacon-core build # Build the react package
 ```
 
 ## System Requirements
@@ -47,7 +47,7 @@ yarn workspace @rotationalio/beacon-core build # Build the react package
 You can run Storybook and instantly start experimenting with the components' code running the command:
 
 ```bash
-yarn workspace @rotationalio/beacon-storybook storybook
+yarn workspace @rotational/beacon-storybook storybook
 ```
 
 A compiled storybook can be found also [here](https://rotational.io).
