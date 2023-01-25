@@ -1,17 +1,23 @@
 {
-  "name": "beacon-ds",
+  "name": "@rotational/beacon-ds",
   "packageManager": "yarn@3.2.1",
   "scripts": {
     "lint": "eslint --ignore-path .gitignore --quiet --no-error-on-unmatched-pattern packages/**/*{js,jsx,ts,tsx}",
     "build": "yarn build:token && yarn build:core ",
-    "build:core": "yarn workspace @rotationalio/beacon-core build",
-    "build:token": "yarn workspace @rotationalio/beacon-foundation build",
-    "storybook": "yarn workspace @rotationalio/beacon-storybook storybook",
-    "docs": "yarn workspace @rotationalio/beacon-docs build",
-    "dev:docs": "yarn workspace @rotationalio/beacon-docs dev",
-    "start:docs": "yarn workspace @rotationalio/beacon-docs start"
+    "build:core": "yarn workspace @rotational/beacon-core build",
+    "build:token": "yarn workspace @rotational/beacon-foundation build",
+    "storybook": "yarn workspace @rotational/beacon-storybook storybook",
+    "docs": "yarn workspace @rotational/beacon-docs build",
+    "dev:docs": "yarn workspace @rotational/beacon-docs dev",
+    "start:docs": "yarn workspace @rotational/beacon-docs start",
+    "changeset": "changeset",
+    "prerelease": "yarn run build && yarn run test",
+    "test": "yarn workspace @rotational/beacon-core test",
+    "build:preconstruct": "preconstruct build",
+    "build:release": "yarn build && yarn test && yarn forallpackages exec rm -rf _release && yarn forallpackages pack && yarn forallpackages exec \"mkdir _release && tar zxvf package.tgz --directory _release && rm package.tgz\"",
+    "forallpackages": "yarn workspaces foreach --no-private --verbose",
+    "release": "yarn build:release && changeset publish"
   },
-  "private": true,
   "workspaces": [
     "packages/*"
   ],
@@ -26,6 +32,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "preconstruct": "^1.0.0",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"
   },
@@ -34,5 +41,18 @@
     "class-variance-authority": "^0.4.0",
     "react-aria": "^3.22.0",
     "react-stately": "^3.20.0"
-  }
+  },
+  "description": "<div>   <h1 align=\"center\">Beacon design system (experimental) 🎨</h1>",
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rotationalio/beacon-ds.git"
+  },
+  "author": "Cletus Razakou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rotationalio/beacon-ds/issues"
+  },
+  "homepage": "https://github.com/rotationalio/beacon-ds#readme"
 }

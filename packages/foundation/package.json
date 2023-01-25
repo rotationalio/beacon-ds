@@ -1,7 +1,6 @@
 {
-  "name": "@rotationalio/beacon-foundation",
+  "name": "@rotational/beacon-foundation",
   "packageManager": "yarn@3.2.1",
-  "public": true,
   "version": "1.0.0",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",

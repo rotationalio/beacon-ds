@@ -4206,14 +4206,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rotationalio/beacon-core@workspace:^, @rotationalio/beacon-core@workspace:packages/core":
+"@rotational/beacon-ds@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@rotationalio/beacon-core@workspace:packages/core"
+  resolution: "@rotational/beacon-ds@workspace:."
+  dependencies:
+    "@changesets/cli": ^2.24.3
+    "@reach/menu-button": ^0.18.0
+    "@typescript-eslint/eslint-plugin": ^5.30.5
+    "@typescript-eslint/parser": ^5.30.5
+    class-variance-authority: ^0.4.0
+    eslint: ^8.19.0
+    eslint-config-prettier: ^8.5.0
+    eslint-plugin-jsx-a11y: ^6.6.0
+    eslint-plugin-prettier: ^4.2.1
+    eslint-plugin-react: ^7.30.1
+    eslint-plugin-react-hooks: ^4.6.0
+    preconstruct: ^1.0.0
+    prettier: ^2.7.1
+    react-aria: ^3.22.0
+    react-stately: ^3.20.0
+    typescript: ^4.7.4
+  languageName: unknown
+  linkType: soft
+
+"@rotational/beacon-core@workspace:^, @rotational/beacon-core@workspace:packages/core":
+  version: 0.0.0-use.local
+  resolution: "@rotational/beacon-core@workspace:packages/core"
   dependencies:
     "@babel/preset-env": ^7.18.10
     "@babel/preset-react": ^7.18.6
     "@babel/preset-typescript": ^7.18.6
-    "@rotationalio/beacon-foundation": "workspace:^"
+    "@rotational/beacon-foundation": "workspace:^"
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^13.3.0
     "@types/jest": ^28.1.8
@@ -4236,23 +4259,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@rotationalio/beacon-foundation@workspace:^, @rotationalio/beacon-foundation@workspace:packages/foundation":
+"@rotational/beacon-foundation@workspace:^, @rotational/beacon-foundation@workspace:packages/foundation":
   version: 0.0.0-use.local
-  resolution: "@rotationalio/beacon-foundation@workspace:packages/foundation"
+  resolution: "@rotational/beacon-foundation@workspace:packages/foundation"
   dependencies:
     style-dictionary: ^3.7.1
     typescript: ^4.7.2
   languageName: unknown
   linkType: soft
 
-"@rotationalio/beacon-storybook@workspace:packages/storybook":
+"@rotational/beacon-storybook@workspace:packages/storybook":
   version: 0.0.0-use.local
-  resolution: "@rotationalio/beacon-storybook@workspace:packages/storybook"
+  resolution: "@rotational/beacon-storybook@workspace:packages/storybook"
   dependencies:
     "@babel/core": ^7.18.13
     "@mdx-js/react": ^1.6.22
-    "@rotationalio/beacon-core": "workspace:^"
-    "@rotationalio/beacon-foundation": "workspace:^"
+    "@rotational/beacon-core": "workspace:^"
+    "@rotational/beacon-foundation": "workspace:^"
     "@storybook/addon-a11y": ^6.5.10
     "@storybook/addon-actions": ^6.5.10
     "@storybook/addon-docs": ^6.5.10
@@ -8504,7 +8527,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^2.0.0, chalk@npm:^2.1.0, chalk@npm:^2.3.2, chalk@npm:^2.4.1":
+"chalk@npm:^2.0.0, chalk@npm:^2.1.0, chalk@npm:^2.3.2, chalk@npm:^2.4.1, chalk@npm:^2.4.2":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
   dependencies:
@@ -16471,6 +16494,17 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: e39ac60ccd1542d4f9d93d894048aac0d686b3bb38e927d8386005718e6793dbbb46930f0a523fe382f1bbd843c6d980aaea791252bf5e176180e5a4336d9679
+  languageName: node
+  linkType: hard
+
+"preconstruct@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "preconstruct@npm:1.0.0"
+  dependencies:
+    chalk: ^2.4.2
+  bin:
+    preconstruct: ./bin.js
+  checksum: ede256e8838e593bcbba94dbbd62f64481f9bb569276bbef58aeaed57950bd2caf7c75ffb3fb6ff8d9587ec5a817b0d8cc98f77bcc98ab4dd4523e2a76e69bfd
   languageName: node
   linkType: hard
 

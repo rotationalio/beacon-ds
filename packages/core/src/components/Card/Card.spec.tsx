@@ -7,7 +7,7 @@ describe('<Card>', () => {
     expect(getByText('Card')).toBeInTheDocument();
   });
 
-  it('should apply containerClasses props  ', () => {
+  it('should apply containerClasses props', () => {
     const { getByText } = render(
       <Card containerClasses="bg-white shadow-lg rounded-lg">Card</Card>
     );

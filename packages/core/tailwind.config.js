@@ -5,9 +5,7 @@ module.exports = {
       pattern: /^(.*?)/,
     },
   ],
-  presets: [
-    require('@rotationalio/beacon-foundation/lib/tailwindPreset.config'),
-  ],
+  presets: [require('@rotational/beacon-foundation/lib/tailwindPreset.config')],
   content: ['./src/**/*.{html,js,tsx,ts}'],
   plugins: [],
 };

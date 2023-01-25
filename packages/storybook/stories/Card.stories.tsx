@@ -7,7 +7,7 @@ export default {
   component: Card,
 } as Meta;
 
-const Template: Story<typeof Card> = (args) => {
+const Template: Story<CardProps> = (args) => {
   return (
     <Card {...args}>
       <Card.Header>
@@ -30,13 +30,11 @@ Default.args = {
 
 export const WithImage = Template.bind({});
 WithImage.args = {
-  title: 'Card Title',
   imgSrc: 'https://source.unsplash.com/random/400x200',
 };
 
 export const WithImageAndClassnames = Template.bind({});
 WithImageAndClassnames.args = {
-  title: 'Card Title',
   imgSrc: 'https://source.unsplash.com/random/400x200',
   imgPosition: 'left',
   imgClassNames: 'w-1/2',
