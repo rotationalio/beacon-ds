@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Card, CardProps } from '@rotationalio/beacon-core';
+import { Card, CardProps } from '@rotational/beacon-core';
 
 export default {
   title: 'beacon/Card',

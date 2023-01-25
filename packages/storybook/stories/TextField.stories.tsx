@@ -1,4 +1,4 @@
-import TextField from '@rotationalio/beacon-core/src/components/TextField';
+import TextField from '@rotational/beacon-core/src/components/TextField';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {

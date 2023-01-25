@@ -20,7 +20,7 @@
     "baseUrl": ".",
     "outDir": "lib",
     "paths": {
-      "@rotationalio/*": ["packages/*/lib"]
+      "@rotational/*": ["packages/*/lib"]
     }
   },
   "exclude": ["node_modules", "**/*.test.*"]
