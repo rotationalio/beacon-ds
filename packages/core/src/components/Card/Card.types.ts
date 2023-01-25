@@ -2,7 +2,6 @@ import React from 'react';
 
 export interface CardWrapperProps {
     className?: string;
-
 }
 
 export interface CardComposition {
@@ -21,6 +20,6 @@ export interface CardProps extends CardWrapperProps {
     children: React.ReactNode;
     imgSrc?: React.SVGProps<SVGSVGElement> | string;
     imgAlt?: string;
-    imgClasses?: string;
+    imgClassNames?: string;
     imgPosition?: 'top' | 'bottom' | 'left' | 'right';
 }

@@ -19,7 +19,7 @@ function Card<T>(props: CardProps & CardComposition & T) {
     title,
     imgSrc,
     imgPosition,
-    imgClasses,
+    imgClassNames,
     ...rest
   } = props;
 
@@ -40,10 +40,10 @@ function Card<T>(props: CardProps & CardComposition & T) {
       {imgSrc && (
         <div
           className={mergeClassnames(
-            'bg-cover bg-center bg-no-repeat',
-            'h-48 w-full',
-            'rounded-t-lg',
-            imgClasses
+            'mb-4',
+            'rounded-lg',
+            'overflow-hidden',
+            imgClassNames
           )}
           style={{ backgroundImage: `url(${imgSrc})` }}
         />
