@@ -6,6 +6,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:@next/next/recommended',
+    'plugin:storybook/recommended',
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['react', 'jsx-a11y', '@typescript-eslint'],
