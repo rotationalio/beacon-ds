@@ -16,13 +16,15 @@
     "build:preconstruct": "preconstruct build",
     "build:release": "yarn build && yarn test && yarn forallpackages exec rm -rf _release && yarn forallpackages pack && yarn forallpackages exec \"mkdir _release && tar zxvf package.tgz --directory _release && rm package.tgz\"",
     "forallpackages": "yarn workspaces foreach --no-private --verbose",
-    "release": "yarn build:release && changeset publish"
+    "release": "yarn build:release && changeset publish",
+    "build:storybook": "yarn build && yarn storybook"
   },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
     "@changesets/cli": "^2.24.3",
+    "@headlessui/react": "^1.7.7",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
     "@typescript-eslint/parser": "^5.30.5",
     "eslint": "^8.19.0",

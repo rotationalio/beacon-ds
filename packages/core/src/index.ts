@@ -1,4 +1,6 @@
 export { default as Button } from './components/Button';
 export * from './components/Card';
 export * from './utils';
-export * from './components';
+export * from './components/Grid';
+
+
