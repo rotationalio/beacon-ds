@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Card, CardProps } from '@rotationalio/beacon-core';
+import { Card, CardProps } from '@rotational/beacon-core';
 
 export default {
   title: 'beacon/Card',
@@ -25,17 +25,12 @@ const Template: Story<CardProps> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  title: 'Card Title',
+  className: 'bg-green-light flex items-center justify-center',
 };
 
 export const WithImage = Template.bind({});
 WithImage.args = {
   imgSrc: 'https://source.unsplash.com/random/400x200',
-};
-
-export const WithImageAndClassnames = Template.bind({});
-WithImageAndClassnames.args = {
-  imgSrc: 'https://source.unsplash.com/random/400x200',
-  imgPosition: 'left',
-  imgClassNames: 'w-1/2',
+  imgAlt: 'random image',
+  contentClassName: 'ml-10',
 };

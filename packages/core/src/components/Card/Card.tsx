@@ -11,15 +11,23 @@ const hasHeaderElement = (
 
 // const isBodyElement = (child: React.ReactNode): child is React.ReactElement =>
 //   React.isValidElement(child) && child.type === CardBody;
+type Props = {
+  contentClassName?: string;
+} & CardProps &
+  CardComposition;
 
-function Card<T>(props: CardProps & CardComposition & T) {
+function Card<T>(props: Props & T) {
   const {
     as: Component,
     children,
     title,
     imgSrc,
+    className,
+    imgAlt,
     imgPosition,
     imgClassNames,
+    contentClassName,
+    headerClassNames,
     ...rest
   } = props;
 
@@ -30,26 +38,24 @@ function Card<T>(props: CardProps & CardComposition & T) {
   let header = null;
 
   if (!hasHeaderChildren && title) {
-    header = <CardHeader>{title}</CardHeader>;
+    header = <CardHeader className={headerClassNames}>{title}</CardHeader>;
   }
 
   const styleClasses = imgSrc && getImgWrapperStyle(imgPosition || 'top');
 
   return (
-    <CardWrapper as={Component} classname={styleClasses} {...rest}>
+    <CardWrapper
+      as={Component}
+      className={mergeClassnames(styleClasses, className)}
+      {...rest}
+    >
       {imgSrc && (
-        <div
-          className={mergeClassnames(
-            'mb-4',
-            'rounded-lg',
-            'overflow-hidden',
-            imgClassNames
-          )}
-          style={{ backgroundImage: `url(${imgSrc})` }}
-        />
+        <div>
+          <img src={imgSrc} alt={imgAlt || ''} className={imgClassNames} />
+        </div>
       )}
 
-      <div>
+      <div className={contentClassName}>
         {header}
         {children}
       </div>

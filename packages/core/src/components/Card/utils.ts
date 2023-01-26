@@ -2,13 +2,11 @@ export const getImgWrapperStyle = (imgPosition: string) => {
 
     switch (imgPosition) {
         case 'top':
-            return 'column';
-        case 'bottom':
-            return 'column-reverse';
-        case 'left':
             return 'flex items-center';
-        case 'right':
-            return 'row-reverse';
+        case 'left' || 'right':
+            return 'grid grid-cols-2';
+        case 'top-middle':
+            return 'flex items-center';
         default:
             return 'column';
     }

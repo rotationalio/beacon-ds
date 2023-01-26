@@ -18,8 +18,9 @@ export interface CardProps extends CardWrapperProps {
     className?: string;
     as?: React.ElementType;
     children: React.ReactNode;
-    imgSrc?: React.SVGProps<SVGSVGElement> | string;
-    imgAlt?: string;
+    imgSrc?: string;
+    imgAlt?: string | undefined;
     imgClassNames?: string;
     imgPosition?: 'top' | 'bottom' | 'left' | 'right';
+    headerClassNames?: string;
 }

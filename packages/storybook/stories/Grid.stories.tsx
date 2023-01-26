@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Grid, GridProps } from '@rotationalio/beacon-core';
+import { Grid, GridProps } from '@rotational/beacon-core';
 
 export default {
   title: 'beacon/Grid',
