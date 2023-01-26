@@ -1,6 +1,6 @@
 ---
-'@rotationalio/beacon-foundation': major
-'@rotationalio/beacon-core': major
+'@rotational/beacon-foundation': major
+'@rotational/beacon-core': major
 ---
 
 Version

@@ -1,5 +1,5 @@
 ---
-'@rotationalio/beacon-core': major
+'@rotational/beacon-core': major
 ---
 
 First version

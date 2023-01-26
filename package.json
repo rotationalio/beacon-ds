@@ -16,7 +16,8 @@
     "build:preconstruct": "preconstruct build",
     "build:release": "yarn build && yarn test && yarn forallpackages exec rm -rf _release && yarn forallpackages pack && yarn forallpackages exec \"mkdir _release && tar zxvf package.tgz --directory _release && rm package.tgz\"",
     "forallpackages": "yarn workspaces foreach --no-private --verbose",
-    "release": "yarn build:release && changeset publish"
+    "release": "yarn build:release && changeset publish",
+    "build:storybook": "yarn build && yarn storybook"
   },
   "workspaces": [
     "packages/*"

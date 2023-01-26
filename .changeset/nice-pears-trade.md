@@ -1,6 +1,6 @@
 ---
-'@rotationalio/beacon-foundation': minor
-'@rotationalio/beacon-core': minor
+'@rotational/beacon-foundation': minor
+'@rotational/beacon-core': minor
 ---
 
 minor typo fixes
