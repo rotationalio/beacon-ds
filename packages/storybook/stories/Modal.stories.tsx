@@ -1,6 +1,6 @@
 import Modal, {
   ModalProps,
-} from '@rotationalio/beacon-core/src/components/Modal';
+} from '@rotational/beacon-core/src/components/Modal';
 import { Meta, Story } from '@storybook/react';
 
 export default {
