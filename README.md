@@ -1,5 +1,5 @@
 <div>
-  <h1 align="center">Beacon design system (experimental) 🎨</h1>
+  <h1 align="center">Beacon design system  🎨</h1>
   
   <div align="center">
     <strong>
@@ -32,8 +32,7 @@ Run `yarn` to install the node packages
 Some packages need to be built before consuming them, like the `foundation`, which will distribute the design tokens to the rest of the packages. To build the packages execute:
 
 ```bash
-yarn workspace @rotational/beacon-foundation build # Build the foundation package
-yarn workspace @rotational/beacon-core build # Build the react package
+yarn build
 ```
 
 ## System Requirements
@@ -47,11 +46,18 @@ yarn workspace @rotational/beacon-core build # Build the react package
 You can run Storybook and instantly start experimenting with the components' code running the command:
 
 ```bash
-yarn workspace @rotational/beacon-storybook storybook
+yarn storybook
 ```
 
 A compiled storybook can be found also [here](https://rotational.io).
 
+## Publish to NPM 
+
+You can publish the package by running 
+
+```bash
+yarn release
+```
 
 ## Packages used 
 
@@ -59,3 +65,4 @@ A compiled storybook can be found also [here](https://rotational.io).
  - cva (class-variance-authority)
  - clsx
  - tailwind-merge 
+ - styled component 

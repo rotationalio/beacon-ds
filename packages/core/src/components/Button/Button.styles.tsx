@@ -10,7 +10,7 @@ export const button = cva(['font-regular rounded-lg rounded-full px-2 py-2'], {
         'transition duration-300 ease-out',
       ],
       secondary: [
-        'text-white text-xs bg-secondary-100',
+        'text-white text-xs bg-primary-400',
         'disabled:bg-secondary-700',
         'hover:bg-secondary-700',
         'transition duration-300 ease-out',
@@ -19,9 +19,9 @@ export const button = cva(['font-regular rounded-lg rounded-full px-2 py-2'], {
       warning: ['text-white text-xs bg-warning-500'],
     },
     size: {
-      small: ['text-xs', 'py-1', 'px-2'],
-      medium: ['text-sm', 'py-3', 'px-4'],
-      large: ['text-base', 'py-4', 'px-7'],
+      small: ['text-sm', 'py-1', 'px-2'],
+      medium: ['text-base', 'py-3', 'px-4'],
+      large: ['text-xl', 'py-4', 'px-7'],
     },
   },
   defaultVariants: {

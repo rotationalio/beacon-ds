@@ -8,7 +8,7 @@ import {
 } from 'react-aria';
 import { button } from './Button.styles';
 import { Color, Size } from '../../types';
-
+import mergeClassnames from '../../utils/mergeClassnames';
 export type ButtonProps = {
   children: ReactNode;
   color?: Color;
@@ -25,16 +25,21 @@ const Button = forwardRef((props: ButtonProps, ref: any) => {
   const { children, color, size, className, leftIcon, rightIcon } = props;
   const { buttonProps } = useButton(props, ref);
   const { focusProps } = useFocusRing();
-
+  const mergeClassname = mergeClassnames(
+    'h-14 rounded text-center text-xl font-bold text-white',
+    className
+  );
   return (
     <button
-      className={button({ intent: color, size, className })}
+      className={mergeClassnames(
+        button({ intent: color, size, className: mergeClassname })
+      )}
       {...mergeProps(buttonProps, focusProps)}
       ref={ref}
     >
-      {leftIcon && <span className="beacon-pr-1">{leftIcon}</span>}
+      {leftIcon && <span className="pr-1">{leftIcon}</span>}
       {children}
-      {rightIcon && <span className="beacon-pl-1">{rightIcon}</span>}
+      {rightIcon && <span className="pl-1">{rightIcon}</span>}
     </button>
   );
 });
