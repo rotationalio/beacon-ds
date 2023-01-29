@@ -2,7 +2,7 @@ import ModalUnstyled from '@mui/base/ModalUnstyled';
 import React from 'react';
 import styled from 'styled-components';
 import clsx from 'clsx';
-import { ContainerProps } from './Modal.types';
+import { ModalContainerProps } from './Modal.types';
 import CloseIcon from './CloseIcon';
 
 export const BackdropUnstyled = React.forwardRef<
@@ -36,29 +36,31 @@ export const Backdrop = styled(BackdropUnstyled)`
   -webkit-tap-highlight-color: transparent;
 `;
 
-export const Container = styled.div<ContainerProps>(({ fullScreen, size }) => ({
-  minWidth: 300,
-  borderRadius: '1rem',
-  background: '#fff',
-  padding: '1rem 2rem',
-  outline: 'none',
-  position: 'relative',
+export const Container = styled.div<ModalContainerProps>(
+  ({ fullScreen, size }) => ({
+    minWidth: 300,
+    borderRadius: '1rem',
+    background: '#fff',
+    padding: '1rem 2rem',
+    outline: 'none',
+    position: 'relative',
 
-  ...(size === 'medium' && {
-    width: '50%',
-  }),
+    ...(size === 'medium' && {
+      width: '50%',
+    }),
 
-  ...(size === 'large' && {
-    width: '80%',
-    padding: 20,
-  }),
+    ...(size === 'large' && {
+      width: '80%',
+      padding: 20,
+    }),
 
-  ...(fullScreen && {
-    width: '100%',
-    height: '100%',
-    borderRadius: 0,
-  }),
-}));
+    ...(fullScreen && {
+      width: '100%',
+      height: '100%',
+      borderRadius: 0,
+    }),
+  })
+);
 
 export const Title = styled.h1((props) => ({
   fontSize: '1.25rem' /* 20px */,

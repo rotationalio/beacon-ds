@@ -1,6 +1,6 @@
 
 type GridPosition = 'x' | 'y';
-export const getGridColumns = (columns: number) => {
+export const setGridColumns = (columns: number) => {
     switch (columns) {
         case 1:
             return 'grid-cols-1';
@@ -13,7 +13,7 @@ export const getGridColumns = (columns: number) => {
     }
 };
 
-export const getGridRows = (rows: number) => {
+export const setGridRows = (rows: number) => {
     switch (rows) {
         case 1:
             return 'grid-rows-1';
@@ -26,7 +26,7 @@ export const getGridRows = (rows: number) => {
     }
 }
 
-export const getGridGap = (gap: number, position?: GridPosition) => {
+export const setGridGap = (gap: number, position?: GridPosition) => {
     switch (gap) {
         case 1:
             if (position === 'x') {
@@ -54,7 +54,7 @@ export const getGridGap = (gap: number, position?: GridPosition) => {
             return 'gap-3';
     }
 }
-export const getGridAutoFlow = (autoFlow: string) => {
+export const setGridAutoFlow = (autoFlow: string) => {
     switch (autoFlow) {
         case 'row':
             return 'grid-flow-row';
@@ -64,7 +64,7 @@ export const getGridAutoFlow = (autoFlow: string) => {
     }
 }
 
-export const getGridAutoRows = (autoRows: number) => {
+export const setGridAutoRows = (autoRows: number) => {
     switch (autoRows) {
         case 1:
             return 'auto-rows-1';
@@ -76,7 +76,7 @@ export const getGridAutoRows = (autoRows: number) => {
             return 'auto-rows-3';
     }
 }
-export const getGridAutoColumns = (autoColumns: number) => {
+export const setGridAutoColumns = (autoColumns: number) => {
     switch (autoColumns) {
         case 1:
             return 'auto-cols-1';
@@ -89,7 +89,7 @@ export const getGridAutoColumns = (autoColumns: number) => {
     }
 }
 
-export const getGridTemplateRows = (templateRows: number) => {
+export const setGridTemplateRows = (templateRows: number) => {
     switch (templateRows) {
         case 1:
             return 'grid-rows-1';
@@ -102,7 +102,7 @@ export const getGridTemplateRows = (templateRows: number) => {
     }
 }
 
-export const getGridTemplateColumns = (templateColumns: number) => {
+export const setGridTemplateColumns = (templateColumns: number) => {
     switch (templateColumns) {
         case 1:
             return 'grid-cols-1';
@@ -115,7 +115,7 @@ export const getGridTemplateColumns = (templateColumns: number) => {
     }
 }
 
-export const getGridFlow = (flow: string) => {
+export const setGridFlow = (flow: string) => {
     switch (flow) {
         case 'row':
             return 'grid-flow-row';

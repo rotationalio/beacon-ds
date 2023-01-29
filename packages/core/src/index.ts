@@ -5,3 +5,4 @@ export * from './components/Grid';
 export * from './components';
 export * from './components/Spinner';
 export * from './components/Btn';
+export * from './components/Container';

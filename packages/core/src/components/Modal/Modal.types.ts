@@ -12,7 +12,7 @@ export type ModalProps = {
   >;
 } & ModalUnstyledOwnProps;
 
-export type ContainerProps = {
+export type ModalContainerProps = {
   fullScreen?: boolean;
   size?: TSize;
 };

@@ -12,8 +12,6 @@ export const CardWrapper = styled(Box)({
 export const CardHeader = styled(Box)({
   display: 'flex',
   alignItems: 'center',
-  borderTopLeftRadius: 'var(--border-radius-1)',
-  borderTopRightRadius: 'var(--border-radius-1)',
   minHeight: 'var(--spacings-8)',
   paddingBottom: 'var(--spacings-2)',
   fontWeight: 500,
