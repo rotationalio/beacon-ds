@@ -14,10 +14,13 @@
         "value": "#ECF6FF"
       },
       "500": {
-        "value": "#F8F9FA"
+        "value": "#F26800"
       },
       "400": {
         "value": "#E66809"
+      },
+      "300": {
+        "value": "#FF9500"
       },
       "DEFAULT": {
         "value": "#1D65A6"
@@ -195,7 +198,7 @@
         "value": "#6C757D"
       },
       "DEFAULT": {
-        "value": "#FFFFFF"
+        "value": "var(colors.white.900)"
       }
     },
     "black": {
@@ -222,6 +225,37 @@
       }
     },
     "blue": {
+      "900": {
+        "value": "#192E5B"
+      },
+      "800": {
+        "value": "#1D3C73"
+      },
+      "700": {
+        "value": "#1D4A8A"
+      },
+      "600": {
+        "value": "#1D65A6"
+      },
+      "500": {
+        "value": "#1D7CC1"
+      },
+      "400": {
+        "value": "#1D96D9"
+      },
+      "300": {
+        "value": "#1DAFEE"
+      },
+      "200": {
+        "value": "#72A2C0"
+      },
+      "100": {
+        "value": "#C5EDFF"
+      },
+      "50": {
+        "value": "#ECF6FF"
+      },
+
       "dark": {
         "value": "#192E5B"
       },
@@ -241,10 +275,12 @@
         "value": "var(colors.blue.primary)"
       }
     },
+    
     "green": {
       "light": {
         "value": "#ECFADC"
       },
+      
       "DEFAULT": {
         "value": "#6DD19C"
       }

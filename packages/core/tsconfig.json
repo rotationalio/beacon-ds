@@ -9,6 +9,6 @@
     "skipLibCheck": true
 
   },
-  "include": ["./src", "./__tests__"],
+  "include": ["./src", "./__tests__", "src/types"],
   "exclude": ["./node_modules"]
 }

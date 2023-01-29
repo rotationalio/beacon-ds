@@ -1,0 +1,52 @@
+# Button
+
+## Component
+
+import { useState } from 'react';
+import { Button } from '@rotational/beacon-core';
+
+    * ### Code
+
+        ```jsx
+        import { useState } from 'react';
+        import { Button } from '@rotational/beacon-core';
+        export const Counter = () => {
+        const [count, setCount] = useState(0);
+        return (
+            <div>
+            <Button
+                variant="primary"
+                size={'small'}
+                onClick={() => setCount(count + 1)}
+                className={styles.counter}
+            >
+                Clicked {count} times
+            </Button>
+            </div>
+        );
+        };
+        ```
+
+    * ### Result
+
+{/* Import CSS modules */}
+import styles from '../../components/counters.module.css'
+import '@rotational/beacon-core/lib/style.css'
+
+export const Counter = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <Button
+        variant="primary"
+        size={'small'}
+        onClick={() => setCount(count + 1)}
+        className={styles.counter}
+      >
+        Clicked {count} times
+      </Button>
+    </div>
+  );
+};
+
+<Counter />

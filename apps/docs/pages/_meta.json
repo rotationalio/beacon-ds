@@ -1,0 +1,17 @@
+{
+  "index": "Getting Started",
+  "Foundation": "Foundation",
+  "components": "Components",
+  "about": {
+    "title": "About",
+    "type": "page",
+    "href": "https://rotational.io",
+    "newWindow": true
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "https://twitter.com/rotationalio",
+    "newWindow": true
+  }
+}

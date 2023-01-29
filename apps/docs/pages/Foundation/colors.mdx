@@ -1,0 +1,31 @@
+## Colors
+
+--
+{/* Import CSS modules */}
+import styles from '../../components/counters.module.css'
+import '@rotational/beacon-core/lib/style.css'
+
+export const Counter = () => {
+  return (
+    <ul class="grid grid-cols-3 gap-x-3 gap-y-10 p-2  ">
+      <li className="">
+        <div className="flex">
+          <div className="rounded-full bg-danger-500 h-24 w-24 border-20  shadow-md mr-8 text-8xl shrink-0 "></div>
+          <div className="">
+            <h3 className="text-lg"> white Color</h3>
+            <p>
+              <code> --white--500 </code>
+            </p>
+            <p>
+              <code> --white-100 </code>
+            </p>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+);
+};
+
+<Counter />

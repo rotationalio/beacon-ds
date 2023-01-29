@@ -1,4 +1,4 @@
-import { Button } from '@rotational/beacon-core/src';
+import { Button } from '@rotational/beacon-core';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
@@ -33,14 +33,14 @@ Secondary.args = {
   color: 'secondary',
 };
 
-export const Warning = Template.bind({});
-Warning.args = {
+export const Tertiary = Template.bind({});
+Tertiary.args = {
   ...Default.args,
-  color: 'warning',
+  variant: 'tertiary',
 };
 
-export const Error = Template.bind({});
-Error.args = {
+export const Ghost = Template.bind({});
+Ghost.args = {
   ...Default.args,
-  color: 'error',
+  variant: 'ghost',
 };

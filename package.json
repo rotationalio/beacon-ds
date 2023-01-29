@@ -20,7 +20,8 @@
     "build:storybook": "yarn build && yarn storybook"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "devDependencies": {
     "@changesets/cli": "^2.24.3",
@@ -44,14 +45,14 @@
     "react-aria": "^3.22.0",
     "react-stately": "^3.20.0"
   },
-  "description": "<div>   <h1 align=\"center\">Beacon design system (experimental) 🎨</h1>",
+  "description": "<div>   <h1 align=\"center\">Beacon design system </h1>",
   "version": "1.0.0",
   "main": ".eslintrc.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rotationalio/beacon-ds.git"
   },
-  "author": "Cletus Razakou",
+  "author": "Rotational Labs",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rotationalio/beacon-ds/issues"

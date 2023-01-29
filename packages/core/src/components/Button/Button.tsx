@@ -7,33 +7,43 @@ import {
   mergeProps,
 } from 'react-aria';
 import { button } from './Button.styles';
-import { Color, Size } from '../../types';
+
 import mergeClassnames from '../../utils/mergeClassnames';
+
+type BtnVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost';
+
+type BtnSize = 'small' | 'medium' | 'large';
+
 export type ButtonProps = {
   children: ReactNode;
-  color?: Color;
-  size?: Size;
+  color?: BtnVariant;
+  variant?: BtnVariant;
+  size?: BtnSize;
   className?: string;
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
+  isLoading?: Boolean;
   tabIndex?: number;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 } & Omit<VariantProps<typeof button>, 'intent' | 'size'> &
   AriaButtonProps<'button'>;
 
 const Button = forwardRef((props: ButtonProps, ref: any) => {
-  const { children, color, size, className, leftIcon, rightIcon } = props;
+  const { children, color, variant, size, className, leftIcon, rightIcon } =
+    props;
   const { buttonProps } = useButton(props, ref);
   const { focusProps } = useFocusRing();
   const mergeClassname = mergeClassnames(
-    'h-14 rounded text-center text-xl font-bold text-white',
+    'rounded text-center text-lg font-bold text-white',
     className
   );
   return (
     <button
-      className={mergeClassnames(
-        button({ intent: color, size, className: mergeClassname })
-      )}
+      className={button({
+        intent: color || variant,
+        size,
+        className: mergeClassname,
+      })}
       {...mergeProps(buttonProps, focusProps)}
       ref={ref}
     >

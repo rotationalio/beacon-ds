@@ -15,8 +15,13 @@ export const button = cva(['font-regular rounded-lg rounded-full px-2 py-2'], {
         'hover:bg-secondary-700',
         'transition duration-300 ease-out',
       ],
-      error: ['text-white text-xs bg-danger-500'],
-      warning: ['text-white text-xs bg-warning-500'],
+      tertiary: [
+        'text-white text-xs bg-secondary-900',
+        'disabled:bg-secondary-900',
+        'hover:bg-secondary-900',
+        'transition duration-300 ease-out',
+      ],
+      ghost: 'bg-transparent',
     },
     size: {
       small: ['text-sm', 'py-1', 'px-2'],
