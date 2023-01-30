@@ -7,9 +7,9 @@ export type ContainerProps = {
   className?: string;
   style?: React.CSSProperties;
   as?: React.ElementType;
-  [key: string]: any; // key value pair for any other props
+  [key: string]: any; // key value pair for any other props like data-testid or aria-label etc
   variant?: ContainerVariant;
-  brk?: 'sm' | 'md' | 'lg' | 'xl';
+  brk?: 'sm' | 'md' | 'lg' | 'xl'; // breakpoint
 } & React.HTMLAttributes<HTMLDivElement>;
 
 const Container = forwardRef((props: ContainerProps, ref: any) => {

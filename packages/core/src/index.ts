@@ -6,3 +6,4 @@ export * from './components';
 export * from './components/Spinner';
 export * from './components/Btn';
 export * from './components/Container';
+export * from './components/Table';

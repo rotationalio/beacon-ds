@@ -17,6 +17,9 @@
     "@radix-ui/react-avatar": "^1.0.1",
     "@rotational/beacon-foundation": "workspace:^",
     "@tanstack/react-table": "^8.7.8",
+    "@types/react-table": "^7.7.14",
+    "react-aria": "^3.22.0",
+    "react-table": "^7.8.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
