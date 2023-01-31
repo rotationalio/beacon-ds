@@ -1,4 +1,5 @@
-import Modal, {
+import {
+  Modal,
   ModalProps,
 } from '@rotational/beacon-core/src/components/Modal';
 import { Meta, Story } from '@storybook/react';
