@@ -20,6 +20,7 @@ interface TableProps {
   trClassName?: string;
   thClassName?: string;
   statusClassName?: string;
+  actionsClassName?: string;
 }
 
 function Table({
@@ -32,6 +33,7 @@ function Table({
   trClassName,
   thClassName,
   statusClassName,
+  actionsClassName,
 }: TableProps) {
   // Use the state and functions returned from useTable to build your UI
   const {
@@ -116,9 +118,6 @@ function Table({
                 >
                   {(page.length > 0 &&
                     page.map((row, i) => {
-                      // new
-                      console.log('row cells', row.cells);
-                      console.log('row i', i);
                       prepareRow(row);
 
                       return (
@@ -139,7 +138,10 @@ function Table({
                                       />
                                     ),
                                     actions: (
-                                      <ActionPill actions={cell.value} />
+                                      <ActionPill
+                                        actions={cell.value}
+                                        className={actionsClassName}
+                                      />
                                     ),
                                     default: cell.render('Cell'),
                                   }[cell.column.id] || cell.render('Cell')}
