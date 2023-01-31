@@ -1,8 +1,10 @@
 name: Storybook
 on:
   push:
-    branches: [main]
-    paths: [packages/storybook]
+    branches:
+      - 'main'
+    paths: 
+      - 'packages/storybook'
 
 jobs:
   build-and-deploy:
@@ -18,4 +20,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           branch: gh-pages
-          folder: storybook-static # output folder from `npm run build-storybook`
+          folder: 'packages/storybook/storybook-static' # output folder from `npm run build-storybook`

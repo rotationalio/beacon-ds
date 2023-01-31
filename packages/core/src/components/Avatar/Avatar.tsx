@@ -6,7 +6,7 @@ import {
   StyledAvatarImage,
 } from './Avatar.styles';
 import { AvatarProps } from './Avatar.type';
-import getInitials from '../../utils/get-initials';
+import getInitials from '../../utils/getInitials';
 
 const Avatar = (props: AvatarProps) => {
   const { className, fallbackProps, ...imageProps } = props;

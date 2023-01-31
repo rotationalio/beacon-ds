@@ -1,46 +1,56 @@
-import { type VariantProps } from 'class-variance-authority';
-import { ReactNode, forwardRef } from 'react';
-import {
-  type AriaButtonProps,
-  useButton,
-  useFocusRing,
-  mergeProps,
-} from 'react-aria';
-import { button } from './Button.styles';
-import { Color, Size } from '../../types';
+import React, { ReactNode, forwardRef } from 'react';
+import StyledButton from './Button.styles';
+import { BtnSize, BtnVariant } from './Button.types';
 import mergeClassnames from '../../utils/mergeClassnames';
-export type ButtonProps = {
+import Loader from '../Loader/Loader';
+import { setFontSize, setGhostVariant } from './utils';
+export type BtnProps = {
   children: ReactNode;
-  color?: Color;
-  size?: Size;
+  variant?: BtnVariant;
+  size?: BtnSize;
   className?: string;
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
+  isLoading?: Boolean;
   tabIndex?: number;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-} & Omit<VariantProps<typeof button>, 'intent' | 'size'> &
-  AriaButtonProps<'button'>;
+} & React.HTMLAttributes<HTMLButtonElement>;
 
-const Button = forwardRef((props: ButtonProps, ref: any) => {
-  const { children, color, size, className, leftIcon, rightIcon } = props;
-  const { buttonProps } = useButton(props, ref);
-  const { focusProps } = useFocusRing();
-  const mergeClassname = mergeClassnames(
-    'h-14 rounded text-center text-xl font-bold text-white',
-    className
-  );
+const Button = forwardRef((props: BtnProps, ref: any) => {
+  const {
+    children,
+    variant,
+    size,
+    className,
+    leftIcon,
+    rightIcon,
+    isLoading,
+    ...rest
+  } = props;
+
   return (
-    <button
+    <StyledButton
       className={mergeClassnames(
-        button({ intent: color, size, className: mergeClassname })
+        'rounded-sm text-center font-bold text-white-900',
+        setFontSize(size || 'medium'),
+        variant === 'ghost' && setGhostVariant(),
+        className
       )}
-      {...mergeProps(buttonProps, focusProps)}
+      variant={variant}
+      size={size}
       ref={ref}
+      {...rest}
     >
-      {leftIcon && <span className="pr-1">{leftIcon}</span>}
-      {children}
-      {rightIcon && <span className="pl-1">{rightIcon}</span>}
-    </button>
+      {isLoading ? (
+        <Loader size="xs" />
+      ) : (
+        <>
+          {leftIcon && <span className="pr-1">{leftIcon}</span>}
+          {children}
+          {rightIcon && <span className="pl-1">{rightIcon}</span>}
+        </>
+      )}
+    </StyledButton>
   );
 });
 

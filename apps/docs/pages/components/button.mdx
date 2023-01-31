@@ -1,0 +1,134 @@
+# Button
+
+#### Button Variant
+
+import { useState } from 'react';
+import { Button } from '@rotational/beacon-core';
+
+      <details open>
+         <summary>Code</summary>
+
+          ```jsx
+          import { useState } from 'react';
+          import { Button } from '@rotational/beacon-core';
+          export const Counter = () => {
+          const [count, setCount] = useState(0);
+          return (
+              <div>
+              <Button
+                  variant="primary"
+                  size='small'
+                  onClick={() => setCount(count + 1)}
+                  className={styles.counter}
+              >
+                  Clicked {count} times
+              </Button>
+              </div>
+            );
+          };
+          ```
+      </details>
+
+#### Preview
+
+{' '}
+import styles from '../../components/counters.module.css'
+import '@rotational/beacon-core/lib/style.css'
+
+export const Counter = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <div className="grid grid-cols-5 gap-2 ">
+      <div>
+        <h6> Secondary </h6>
+        <Button
+          variant="secondary"
+          size={'small'}
+          onClick={() => setCount(count + 1)}
+          className="text-white-900"
+        >
+          Clicked {count} times
+        </Button>
+      </div>
+      <div>
+        <h6> Primary </h6>
+        <Button
+          variant="primary"
+          size={'small'}
+          onClick={() => setCount(count + 1)}
+          className="text-white-900"
+        >
+          Clicked {count} times
+        </Button>
+      </div>
+      <div>
+        <h6> Tertiary </h6>
+        <Button
+          variant="tertiary"
+          size={'small'}
+          onClick={() => setCount(count + 1)}
+          className="text-white-900"
+        >
+          Clicked {count} times
+        </Button>
+      </div>
+    </div>
+  );
+};
+
+<Counter />
+
+{' '}
+
+#### Buttons size
+
+{' '}
+
+export const BtnSize = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <div className="grid grid-cols-5 gap-2 ">
+      <div>
+        <h6> Small </h6>
+        <Button
+          variant="primary"
+          size="small"
+          onClick={() => setCount(count + 1)}
+          className="text-white-900"
+        >
+          Clicked {count} times
+        </Button>
+      </div>
+      <div>
+        <h6> Medium </h6>
+        <Button
+          variant="primary"
+          size="medium"
+          onClick={() => setCount(count + 1)}
+          className="text-white-900"
+        >
+          Clicked {count} times
+        </Button>
+      </div>
+      <div>
+        <h6> Large </h6>
+        <Button
+          variant="primary"
+          size="large"
+          onClick={() => setCount(count + 1)}
+          className="text-white-900"
+        >
+          Clicked {count} times
+        </Button>
+      </div>
+    </div>
+  );
+};
+
+<BtnSize />
+
+#### Props
+
+| Attribute | type       | description | Default |
+| --------- | ---------- | ----------- | ------- |
+| variant   | color type |             | primary |

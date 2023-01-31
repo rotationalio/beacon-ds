@@ -1,0 +1,29 @@
+name: Surge Next Docs 
+on:
+  push:
+    branches:
+      - 'main'
+    paths: 
+      - 'apps/docs'
+
+jobs:
+  deploy-surge:
+    name: Deploy Next Docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.1
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build and Export 🔧
+        run: yarn run docs:export
+        
+      - name: Deploy to beacon-ds.surge.sh
+        uses: dswistowski/surge-sh-action@v1
+        with:
+          domain: 'beacon-ds.surge.sh'
+          project: '.'
+          login: ${{ secrets.surge_login }}
+          token: ${{ secrets.surge_token }}

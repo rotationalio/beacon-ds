@@ -14,10 +14,16 @@
         "value": "#ECF6FF"
       },
       "500": {
-        "value": "#F8F9FA"
+        "value": "#F26800"
       },
       "400": {
         "value": "#E66809"
+      },
+      "300": {
+        "value": "#FF9500"
+      },
+      "200": {
+        "value": "#1D65A6"
       },
       "DEFAULT": {
         "value": "#1D65A6"
@@ -46,10 +52,10 @@
         "value": "#B1BAC0"
       },
       "200": {
-        "value": "#CBD1D5"
+        "value": "#FFE9DD"
       },
       "100": {
-        "value": "#E5E8EA"
+        "value": "#FBF8EC"
       },
       "slate": {
         "value": "#2F4858"
@@ -222,6 +228,37 @@
       }
     },
     "blue": {
+      "900": {
+        "value": "#192E5B"
+      },
+      "800": {
+        "value": "#1D3C73"
+      },
+      "700": {
+        "value": "#1D4A8A"
+      },
+      "600": {
+        "value": "#1D65A6"
+      },
+      "500": {
+        "value": "#1D7CC1"
+      },
+      "400": {
+        "value": "#1D96D9"
+      },
+      "300": {
+        "value": "#1DAFEE"
+      },
+      "200": {
+        "value": "#72A2C0"
+      },
+      "100": {
+        "value": "#C5EDFF"
+      },
+      "50": {
+        "value": "#ECF6FF"
+      },
+
       "dark": {
         "value": "#192E5B"
       },
@@ -238,15 +275,46 @@
         "value": "#1D65A6"
       },
       "DEFAULT": {
-        "value": "var(colors.blue.primary)"
+        "value": "#FFFF"
       }
     },
+    
     "green": {
       "light": {
         "value": "#ECFADC"
       },
+      
       "DEFAULT": {
         "value": "#6DD19C"
+      }
+    },
+    "gray":{
+      "100": {
+        "value": "#F8F9FA"
+      },
+      "200": {
+        "value": "#E9ECEF"
+      },
+      "300": {
+        "value": "#DEE2E6"
+      },
+      "400": {
+        "value": "#CED4DA"
+      },
+      "500": {
+        "value": "#ADB5BD"
+      },
+      "600": {
+        "value": "#6C757D"
+      },
+      "700": {
+        "value": "#495057"
+      },
+      "800": {
+        "value": "#343A40"
+      },
+      "900": {
+        "value": "#212529"
       }
     }
   }

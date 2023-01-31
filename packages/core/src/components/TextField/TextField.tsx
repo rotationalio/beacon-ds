@@ -1,7 +1,7 @@
 import { cx } from 'class-variance-authority';
 import { ReactNode, useRef } from 'react';
 import { AriaTextFieldOptions, TextFieldAria, useTextField } from 'react-aria';
-import { Size } from '../../types';
+import { TSize } from '../../types';
 import { Label } from '../Label';
 import { Input } from './Input.style';
 import { input } from './TextField.style';
@@ -9,7 +9,7 @@ import mergeClassnames from '../../utils/mergeClassnames';
 
 export type TextFieldProps = {
   className?: string;
-  size?: Size;
+  size?: TSize;
   fullWidth?: boolean;
   rightIcon?: ReactNode;
   errorMessageClassName?: string;

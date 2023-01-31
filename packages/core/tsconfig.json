@@ -6,9 +6,12 @@
     "downlevelIteration": true,
     "target": "ES2022",
     "jsx": "react-jsx",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
 
   },
-  "include": ["./src", "./__tests__"],
+  "include": ["./src", "./__tests__", "src/types"],
   "exclude": ["./node_modules"]
 }
