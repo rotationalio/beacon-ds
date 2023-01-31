@@ -3,4 +3,4 @@
 '@rotational/beacon-core': major
 ---
 
-Refact button
+Added Tabble - Icons - Heading components

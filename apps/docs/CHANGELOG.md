@@ -1,10 +1,9 @@
-# @rotational/beacon-storybook
+# @rotational/beacon-docs
 
-## null
+## 0.0.2
 
 ### Patch Changes
 
-- Updated dependencies [1d15bb3]
 - Updated dependencies [1d15bb3]
 - Updated dependencies [1d15bb3]
 - Updated dependencies [1d15bb3]
@@ -13,13 +12,4 @@
 - Updated dependencies [08e1311]
 - Updated dependencies [08e1311]
 - Updated dependencies [08e1311]
-  - @rotational/beacon-foundation@2.0.0
   - @rotational/beacon-core@2.0.0
-
-## null
-
-### Patch Changes
-
-- Updated dependencies [e138598]
-  - @rotational/beacon-foundation@0.0.1
-  - @rotational/beacon-core@0.0.1
