@@ -1,0 +1,63 @@
+## Containers
+
+Beacon design system features two major layouts: Landing Layout and Dashboard Layout, each with a unique size. To ensure consistency,
+we use a Container component that must be called for either components composition.
+
+<div style={{ marginTop: '50px' }}>
+  <img src="/dash-layout.png" alt="beacon design layout" />
+</div>
+
+#### Dashboard Layout
+
+For the Dashboard view, it's recommended to wrap components with the Dash Container, as shown below:
+
+```Jsx
+ import { Container } from '@rotational/beacon-ds'
+
+  const DashLayout: React.FC () =>{
+   return (
+
+       <Container dash >
+
+         .... your children
+
+       </Container>
+   )
+  }
+```
+
+#### Landing Layout
+
+```Jsx
+ import { Container } from '@rotational/beacon-ds'
+
+  const LandingLayout: React.FC () =>{
+   return (
+    // this will apply max-w-[1660px]
+       <Container >
+
+         .... your children
+
+       </Container>
+   )
+  }
+```
+
+#### Breakpoint Layout
+
+Our design system is built using Tailwind and follows the default Tailwind breakpoints.
+To implement max-w-7xl, we can use breakpoint types xs, md, lg, xl.
+
+```Jsx
+ import { Container } from '@rotational/beacon-ds'
+
+  const ContentBody: React.FC () =>{
+   return (
+       <Container brk='xl' > // this will apply max-w-7xl
+
+         .... your children
+
+       </Container>
+   )
+  }
+```

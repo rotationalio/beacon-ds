@@ -1,153 +1,153 @@
-import {
-  useTable,
-  useSortBy,
-  usePagination,
-  useFilters,
-  useExpanded,
-  useRowSelect,
-  useGlobalFilter,
-} from 'react-table';
+import { useTable, useFilters, useSortBy, usePagination } from 'react-table';
 
-import StyledTable from './Table.styles';
+import { SortIcon, SortUpIcon, SortDownIcon } from '../../shared/Icons';
+import mergeClassnames from '../../utils/mergeClassnames';
+import { StatusPill } from './shared/StatusPill';
+import { ActionPill } from './shared/ActionPill';
 
-export type TableProps = {
+interface TableProps {
   columns: any;
   data: any;
-  loading?: boolean;
-  pageCount?: any;
-};
+  className?: string;
+  tableClassName?: string;
+  theadClassName?: string;
+  tbodyClassName?: string;
+  trClassName?: string;
+  thClassName?: string;
+  statusClassName?: string;
+}
 
-const Table = ({
+function Table({
   columns,
   data,
-  loading,
-  pageCount: controlledPageCount,
-}: TableProps) => {
-  const { getTableProps, getTableBodyProps, headerGroups, prepareRow, page } =
-    useTable(
-      {
-        columns,
-        data,
-        initialState: { pageIndex: 0 },
-        manualPagination: true,
-        pageCount: controlledPageCount,
-      },
-      useFilters,
-      useGlobalFilter,
-      useSortBy,
-      useExpanded,
-      usePagination,
-
-      useRowSelect,
-      (hooks) => {
-        hooks.visibleColumns.push((columns) => [
-          // Let's make a column for selection
-          {
-            id: 'selection',
-            // The header can use the table's getToggleAllRowsSelectedProps method
-            // to render a checkbox
-            Header: ({ getToggleAllRowsSelectedProps }) => (
-              <div>
-                <input type="checkbox" {...getToggleAllRowsSelectedProps()} />
-              </div>
-            ),
-            // The cell can use the individual row's getToggleRowSelectedProps method
-            // to the render a checkbox
-            Cell: ({ row }) => (
-              <div>
-                <input type="checkbox" {...row.getToggleRowSelectedProps()} />
-              </div>
-            ),
-          },
-          ...columns,
-        ]);
-      }
-    );
-
-  // Render the UI for your table
-  return (
-    <StyledTable>
-      <table {...getTableProps()}>
-        <thead>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                  {column.render('Header')}
-                  {/* Add a sort direction indicator */}
-                  <span>
-                    {column.isSorted
-                      ? column.isSortedDesc
-                        ? ' 🔽'
-                        : ' 🔼'
-                      : ''}
-                  </span>
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {page.map((row, i) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
-                    <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                  );
-                })}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-      {/* <div className="pagination">
-        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-          {'<<'}
-        </button>{' '}
-        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-          {'<'}
-        </button>{' '}
-        <button onClick={() => nextPage()} disabled={!canNextPage}>
-          {'>'}
-        </button>{' '}
-        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-          {'>>'}
-        </button>{' '}
-        <span>
-          Page{' '}
-          <strong>
-            {pageIndex + 1} of {pageOptions.length}
-          </strong>{' '}
-        </span>
-        <span>
-          | Go to page:{' '}
-          <input
-            type="number"
-            defaultValue={pageIndex + 1}
-            onChange={(e) => {
-              const page = e.target.value ? Number(e.target.value) - 1 : 0;
-              gotoPage(page);
-            }}
-            style={{ width: '100px' }}
-          />
-        </span>{' '}
-        <select
-          value={pageSize}
-          onChange={(e) => {
-            setPageSize(Number(e.target.value));
-          }}
-        >
-          {[10, 20, 30, 40, 50].map((pageSize) => (
-            <option key={pageSize} value={pageSize}>
-              Show {pageSize}
-            </option>
-          ))}
-        </select>
-      </div> */}
-    </StyledTable>
+  className,
+  tableClassName,
+  theadClassName,
+  tbodyClassName,
+  trClassName,
+  thClassName,
+  statusClassName,
+}: TableProps) {
+  // Use the state and functions returned from useTable to build your UI
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    prepareRow,
+    page, // Instead of using 'rows', we'll use page,
+  } = useTable(
+    {
+      columns,
+      data,
+    },
+    useFilters, // useFilters!
+    useSortBy,
+    usePagination // new
   );
-};
+
+  return (
+    <>
+      {/*  header group (filter row) */}
+      <div className="sm:flex sm:gap-x-2">
+        {headerGroups.map((headerGroup) =>
+          headerGroup.headers.map((column) =>
+            column.Filter ? (
+              <div className="mt-2 sm:mt-0" key={column.id}>
+                {column.render('Filter')}
+              </div>
+            ) : null
+          )
+        )}
+      </div>
+      {/* table */}
+      <div className="mt-4 flex flex-col">
+        <div className="-my-2 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8">
+          <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+            <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg text-[12px]">
+              <table
+                {...getTableProps()}
+                className={mergeClassnames(
+                  'min-w-full divide-y divide-gray-200',
+                  tableClassName
+                )}
+              >
+                <thead className={mergeClassnames('bg-white', theadClassName)}>
+                  {headerGroups.map((headerGroup) => (
+                    <tr {...headerGroup.getHeaderGroupProps()}>
+                      {headerGroup.headers.map((column) => (
+                        <th
+                          scope="col"
+                          className={mergeClassnames(
+                            'group px-6 py-3 text-left text-[12px] font-medium text-gray-500 capitalize tracking-wider border-x-[1.5] border-gray-400/40',
+                            trClassName
+                          )}
+                          {...column.getHeaderProps(
+                            column.getSortByToggleProps()
+                          )}
+                        >
+                          <div className="flex items-center justify-between">
+                            {column.render('Header')}
+                            {/* Add a sort direction indicator */}
+                            <span>
+                              {column.isSorted ? (
+                                column.isSortedDesc ? (
+                                  <SortDownIcon className="w-4 h-4 text-gray-400" />
+                                ) : (
+                                  <SortUpIcon className="w-4 h-4 text-gray-400" />
+                                )
+                              ) : (
+                                <SortIcon className="w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100" />
+                              )}
+                            </span>
+                          </div>
+                        </th>
+                      ))}
+                    </tr>
+                  ))}
+                </thead>
+                <tbody
+                  {...getTableBodyProps()}
+                  className="bg-white divide-y divide-gray-[#1C1C1C]"
+                >
+                  {page.map((row, i) => {
+                    // new
+                    console.log(row);
+                    prepareRow(row);
+
+                    return (
+                      <tr {...row.getRowProps()}>
+                        {row.cells.map((cell) => {
+                          console.log('cell', cell);
+                          return (
+                            <td
+                              {...cell.getCellProps()}
+                              className="px-6 py-4 whitespace-nowrap"
+                              role="cell"
+                            >
+                              {{
+                                status: (
+                                  <StatusPill
+                                    value={cell.value}
+                                    className={statusClassName}
+                                  />
+                                ),
+                                actions: <ActionPill actions={cell.value} />,
+                                default: cell.render('Cell'),
+                              }[cell.column.id] || cell.render('Cell')}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
 
 export default Table;

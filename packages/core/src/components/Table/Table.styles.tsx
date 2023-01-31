@@ -1,38 +1,37 @@
 import styled from 'styled-components';
+import { rgba } from 'polished';
 
-/* Lets guide some custom style to our table */
+const StyledBase = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
-const StyledTable = styled.div`
-  table {
-    border-spacing: 0;
-    border: 1px solid var(--colors-gray-300);
-
-    tr {
-      :last-child {
-        td {
-          border-bottom: 0;
-        }
-      }
-    }
-
-    th,
-    td {
-      padding: 0.5rem;
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
-
-      :last-child {
-        border-right: 0;
-      }
-    }
-
-    th {
-      background: var(--colors-gray-300) d;
-      border-bottom: 1px solid var(--colors-gray-300);
-      color: white;
-      fontweight: bold;
-    }
+const StyledTable = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  color: #686f7a;
+  tbody:before {
+    content: '-';
+    display: block;
+    line-height: 0.6em;
+    color: transparent;
   }
 `;
 
-export default StyledTable;
+const StyledTh = styled.th`
+  text-align: ${(props) => (props.align ? props.align : 'left')};
+  font-size: 18px;
+  color: #686f7a;
+  font-weight: 700;
+  opacity: 0.65;
+`;
+
+const StyledTd = styled.td`
+  text-align: ${(props) => (props.align ? props.align : 'left')};
+`;
+
+const StyledTr = styled.tr`
+  border-bottom: 2px solid ${rgba(150, 150, 150, 0.5)};
+`;
+
+export { StyledBase, StyledTable, StyledTh, StyledTd, StyledTr };

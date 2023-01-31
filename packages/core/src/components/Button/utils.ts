@@ -1,6 +1,12 @@
 import { TSize } from "types"
 export const getAttr = (size: TSize) => {
     switch (size) {
+        case 'xsmall':
+            return {
+                fontSize: 'var(--font-size-10)',
+                padding: '4px 8px',
+            }
+
         case 'small':
             return {
                 fontSize: 'var(--font-size-12)',
@@ -26,6 +32,9 @@ export const getAttr = (size: TSize) => {
 
 export const setFontSize = (size: TSize) => {
     switch (size) {
+        case 'xsmall':
+            return 'text-xs py-1 px-2';
+
         case 'small':
             return 'text-sm py-1 px-2';
         case 'medium':
@@ -39,7 +48,7 @@ export const setFontSize = (size: TSize) => {
 
 // style default ghost variant button
 export const setGhostVariant = () => {
-    return 'text-neutral-600 text-md bg-white-900 border-2 border-neutral-600 hover:border-neutral-900 transition duration-300 ease-out'
+    return 'text-neutral-600 text-md bg-white-900 border-2 border-neutral-600 hover:border-neutral-900 hover:text-neutral-900 transition duration-300 ease-out'
 }
 
 

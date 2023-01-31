@@ -8,8 +8,9 @@
     "build:token": "yarn workspace @rotational/beacon-foundation build",
     "storybook": "yarn workspace @rotational/beacon-storybook storybook",
     "docs": "yarn workspace @rotational/beacon-docs build",
-    "dev:docs": "yarn workspace @rotational/beacon-docs dev",
-    "start:docs": "yarn workspace @rotational/beacon-docs start",
+    "docs:dev": "yarn workspace @rotational/beacon-docs dev",
+    "docs:start": "yarn workspace @rotational/beacon-docs start",
+    "docs:export": "yarn workspace @rotational/beacon-docs export",
     "changeset": "changeset",
     "prerelease": "yarn run build && yarn run test",
     "test": "yarn workspace @rotational/beacon-core test",
@@ -17,7 +18,8 @@
     "build:release": "yarn build && yarn forallpackages exec rm -rf _release && yarn forallpackages pack && yarn forallpackages exec \"mkdir _release && tar zxvf package.tgz --directory _release && rm package.tgz\"",
     "forallpackages": "yarn workspaces foreach --no-private --verbose",
     "release": "yarn build:release && changeset publish",
-    "build:storybook": "yarn build && yarn storybook"
+    "build:storybook": "yarn build && yarn storybook",
+    "storybook:build": "yarn workspace @rotational/beacon-storybook build-storybook"
   },
   "workspaces": [
     "packages/*",

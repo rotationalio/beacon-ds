@@ -12,4 +12,10 @@ export const setVariantStyle = (variant: ContainerVariant) => {
     }
 }
 
+export enum CONTAINER_VARIANT {
+    DEFAULT = 'default',
+    DASH = 'dash',
+    BASE = 'base'
+}
+
 
