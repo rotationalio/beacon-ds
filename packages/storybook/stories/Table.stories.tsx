@@ -76,3 +76,37 @@ Default.args = {
     },
   ],
 };
+
+export const NoData = Template.bind({});
+
+NoData.args = {
+  columns: [
+    {
+      Header: 'Name',
+      accessor: 'name',
+    },
+    {
+      Header: 'Title',
+      accessor: 'title',
+    },
+    {
+      Header: 'Status',
+      accessor: 'status',
+    },
+    {
+      Header: 'Age',
+      accessor: 'age',
+    },
+
+    {
+      Header: 'Role',
+      accessor: 'role',
+      filter: 'includes',
+    },
+    {
+      Header: 'Actions',
+      accessor: 'actions',
+    },
+  ],
+  data: [],
+};

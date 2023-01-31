@@ -68,3 +68,23 @@ export function ThreeDotIcon({ className }: IconProps) {
     </svg>
   );
 }
+
+export function NoDataIcon({ className }: IconProps) {
+  return (
+    <svg
+      className={className}
+      stroke="currentColor"
+      fill="currentColor"
+      strokeWidth="0"
+      viewBox="0 0 512 512"
+      height="1em"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-110.28 0-200-89.72-200-200S145.72 56 256 56s200 89.72 200 200-89.72 200-200 200z"></path>
+      <path d="M256 128c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80zm0 128c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48z"></path>
+
+      <path d="M256 320c-8.837 0-16-7.163-16-16v-96c0-8.837 7.163-16 16-16s16 7.163 16 16v96c0 8.837-7.163 16-16 16z"></path>
+    </svg>
+  );
+}

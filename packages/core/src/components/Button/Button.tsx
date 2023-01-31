@@ -2,7 +2,7 @@ import React, { ReactNode, forwardRef } from 'react';
 import StyledButton from './Button.styles';
 import { BtnSize, BtnVariant } from './Button.types';
 import mergeClassnames from '../../utils/mergeClassnames';
-import Spinner from '../Spinner/Spinner';
+import Loader from '../Loader/Loader';
 import { setFontSize, setGhostVariant } from './utils';
 export type BtnProps = {
   children: ReactNode;
@@ -42,7 +42,7 @@ const Button = forwardRef((props: BtnProps, ref: any) => {
       {...rest}
     >
       {isLoading ? (
-        <Spinner size="xs" />
+        <Loader size="xs" />
       ) : (
         <>
           {leftIcon && <span className="pr-1">{leftIcon}</span>}

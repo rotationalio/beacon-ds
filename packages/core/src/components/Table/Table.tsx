@@ -1,6 +1,11 @@
 import { useTable, useFilters, useSortBy, usePagination } from 'react-table';
 
-import { SortIcon, SortUpIcon, SortDownIcon } from '../../shared/Icons';
+import {
+  SortIcon,
+  SortUpIcon,
+  SortDownIcon,
+  NoDataIcon,
+} from '../../shared/Icons';
 import mergeClassnames from '../../utils/mergeClassnames';
 import { StatusPill } from './shared/StatusPill';
 import { ActionPill } from './shared/ActionPill';
@@ -109,37 +114,55 @@ function Table({
                   {...getTableBodyProps()}
                   className="bg-white divide-y divide-gray-[#1C1C1C]"
                 >
-                  {page.map((row, i) => {
-                    // new
-                    console.log(row);
-                    prepareRow(row);
+                  {(page.length > 0 &&
+                    page.map((row, i) => {
+                      // new
+                      console.log('row cells', row.cells);
+                      console.log('row i', i);
+                      prepareRow(row);
 
-                    return (
-                      <tr {...row.getRowProps()}>
-                        {row.cells.map((cell) => {
-                          console.log('cell', cell);
-                          return (
-                            <td
-                              {...cell.getCellProps()}
-                              className="px-6 py-4 whitespace-nowrap"
-                              role="cell"
-                            >
-                              {{
-                                status: (
-                                  <StatusPill
-                                    value={cell.value}
-                                    className={statusClassName}
-                                  />
-                                ),
-                                actions: <ActionPill actions={cell.value} />,
-                                default: cell.render('Cell'),
-                              }[cell.column.id] || cell.render('Cell')}
-                            </td>
-                          );
-                        })}
-                      </tr>
-                    );
-                  })}
+                      return (
+                        <tr {...row.getRowProps()}>
+                          {row.cells.length > 0 &&
+                            row.cells.map((cell) => {
+                              return (
+                                <td
+                                  {...cell.getCellProps()}
+                                  className="px-6 py-4 whitespace-nowrap"
+                                  role="cell"
+                                >
+                                  {{
+                                    status: (
+                                      <StatusPill
+                                        value={cell.value}
+                                        className={statusClassName}
+                                      />
+                                    ),
+                                    actions: (
+                                      <ActionPill actions={cell.value} />
+                                    ),
+                                    default: cell.render('Cell'),
+                                  }[cell.column.id] || cell.render('Cell')}
+                                </td>
+                              );
+                            })}
+                        </tr>
+                      );
+                    })) || (
+                    <tr className="text-center items-center">
+                      <td
+                        colSpan={columns.length}
+                        className="px-auto py-4 whitespace-nowrap text-center h-[100px] items-center"
+                      >
+                        <div className="flex text-center justify-center">
+                          <NoDataIcon className="w-16 h-16 text-gray-500" />
+                        </div>
+                        <p className="mt-2 text-sm text-gray-500">
+                          No data available
+                        </p>
+                      </td>
+                    </tr>
+                  )}
                 </tbody>
               </table>
             </div>
