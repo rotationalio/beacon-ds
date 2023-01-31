@@ -1,10 +1,23 @@
-# @rotational/beacon-storybook
+# @rotational/beacon-core
 
-## null
+## 2.0.0
+
+### Major Changes
+
+- 1d15bb3: First version
+- 1d15bb3: Version
+- 1e3bed9: First release
+- 08e1311: Added new components
+- 08e1311: Refact button
+
+### Minor Changes
+
+- 1d15bb3: Change package privacy
+- 1d15bb3: minor typo fixes
+- 08e1311: Added avatar
 
 ### Patch Changes
 
-- Updated dependencies [1d15bb3]
 - Updated dependencies [1d15bb3]
 - Updated dependencies [1d15bb3]
 - Updated dependencies [1d15bb3]
@@ -12,14 +25,4 @@
 - Updated dependencies [1e3bed9]
 - Updated dependencies [08e1311]
 - Updated dependencies [08e1311]
-- Updated dependencies [08e1311]
   - @rotational/beacon-foundation@2.0.0
-  - @rotational/beacon-core@2.0.0
-
-## null
-
-### Patch Changes
-
-- Updated dependencies [e138598]
-  - @rotational/beacon-foundation@0.0.1
-  - @rotational/beacon-core@0.0.1
