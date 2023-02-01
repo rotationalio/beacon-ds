@@ -1,4 +1,3 @@
-
 export * from './utils';
 export * from './hooks';
 export * from './components/AriaButton';
@@ -18,3 +17,4 @@ export * from './components/Label';
 export * from './components/Menu';
 export * from './components/Toast';
 
+export * from './components/Tooltip';

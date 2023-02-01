@@ -43,6 +43,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.7",
     "@mui/base": "^5.0.0-alpha.115",
+    "@radix-ui/react-tooltip": "^1.0.3",
     "class-variance-authority": "^0.4.0",
     "react-aria": "^3.22.0",
     "react-stately": "^3.20.0"
