@@ -1,5 +1,11 @@
 # @rotational/beacon-foundation
 
+## 3.0.0
+
+### Major Changes
+
+- 0deab6b: Added Tabble - Icons - Heading components
+
 ## 2.0.0
 
 ### Major Changes

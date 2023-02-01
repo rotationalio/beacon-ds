@@ -1,5 +1,6 @@
 import { Meta, Story } from '@storybook/react';
-import Avatar, {
+import {
+  Avatar,
   AvatarProps,
 } from '@rotational/beacon-core/src/components/Avatar';
 

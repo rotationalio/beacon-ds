@@ -1,11 +1,10 @@
 {
   "name": "@rotational/beacon-icons",
   "packageManager": "yarn@3.2.1",
-  "private" :  true ,
+  "private": true,
   "version": "1.0.0",
   "author": "Yolo Group",
   "license": "MIT",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts"
-
 }

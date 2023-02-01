@@ -1,6 +1,6 @@
 import { MenuUnstyledActions } from '@mui/base';
-import { Button } from '@rotational/beacon-core';
-import Menu from '@rotational/beacon-core/src/components/Menu';
+import { Button, Menu } from '@rotational/beacon-core';
+
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 
