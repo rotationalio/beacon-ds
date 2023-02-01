@@ -1,5 +1,13 @@
 # @rotational/beacon-docs
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies [0deab6b]
+- Updated dependencies [79b82c7]
+  - @rotational/beacon-core@3.0.0
+
 ## 0.0.2
 
 ### Patch Changes

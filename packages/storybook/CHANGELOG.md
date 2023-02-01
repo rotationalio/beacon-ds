@@ -4,6 +4,15 @@
 
 ### Patch Changes
 
+- Updated dependencies [0deab6b]
+- Updated dependencies [79b82c7]
+  - @rotational/beacon-foundation@3.0.0
+  - @rotational/beacon-core@3.0.0
+
+## null
+
+### Patch Changes
+
 - Updated dependencies [1d15bb3]
 - Updated dependencies [1d15bb3]
 - Updated dependencies [1d15bb3]

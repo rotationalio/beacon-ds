@@ -1,5 +1,17 @@
 # @rotational/beacon-core
 
+## 3.0.0
+
+### Major Changes
+
+- 0deab6b: Added Tabble - Icons - Heading components
+- 79b82c7: Fix Modal component
+
+### Patch Changes
+
+- Updated dependencies [0deab6b]
+  - @rotational/beacon-foundation@3.0.0
+
 ## 2.0.0
 
 ### Major Changes
