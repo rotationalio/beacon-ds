@@ -43,7 +43,7 @@ const Button = forwardRef((props: BtnProps, ref: any) => {
       {...rest}
     >
       {isLoading ? (
-        <Loader size="xs" />
+        <Loader size="xs" className="text-center item-center m-auto" />
       ) : (
         <>
           {leftIcon && <span className="pr-1">{leftIcon}</span>}

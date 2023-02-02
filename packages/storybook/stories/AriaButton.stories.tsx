@@ -21,6 +21,7 @@ Default.args = {
   leftIcon: <>😂</>,
   rightIcon: <>😇</>,
   isDisabled: false,
+  size: 'small',
 };
 
 export const Primary = Template.bind({});
