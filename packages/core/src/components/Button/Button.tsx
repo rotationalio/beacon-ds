@@ -31,7 +31,7 @@ const Button = forwardRef((props: BtnProps, ref: any) => {
   return (
     <StyledButton
       className={mergeClassnames(
-        'rounded-sm text-center font-bold text-white-900',
+        'min-h-[57px] rounded-sm text-center font-bold text-white-900 ',
         setFontSize(size || 'medium'),
         variant === 'ghost' && setGhostVariant(),
         className
