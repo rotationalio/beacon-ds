@@ -1,22 +1,23 @@
-import mergeClassnames from '@rotational/beacon-core/lib/utils';
+import mergeClassnames from '../../utils/mergeClassnames';
 import { cx } from 'class-variance-authority';
 import { ReactNode, useRef } from 'react';
 import { AriaTextFieldOptions, useTextField } from 'react-aria';
 import { twMerge } from 'tailwind-merge';
 
 import { Label } from '../Label';
-import { Input } from './Input.style';
-import { input } from './TextField.style';
+import { Input } from './Input.styles';
+import { getTextFieldInputStyle } from './util';
 
 export type TextFieldProps = {
   className?: string;
   size?: 'xsmall' | 'small' | 'medium' | 'large';
   fullWidth?: boolean;
   rightIcon?: ReactNode;
+  [key: string]: any;
   errorMessageClassName?: string;
   descriptionClassName?: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
-} & Omit<AriaTextFieldOptions<'input'>, 'onChange'>;
+} & AriaTextFieldOptions<'input'>;
 
 function TextField(props: Partial<TextFieldProps>) {
   const {
@@ -30,18 +31,22 @@ function TextField(props: Partial<TextFieldProps>) {
     onChange,
   } = props;
   const ref = useRef<HTMLInputElement>(null);
-  const { labelProps, inputProps, descriptionProps, errorMessageProps } = useTextField(
-    { ...props, onChange: props.onChange as any },
-    ref
-  );
+  const { labelProps, inputProps, descriptionProps, errorMessageProps } =
+    useTextField(props, ref);
 
   return (
-    <div className={cx('relative flex flex-col', fullWidth ? 'w-full' : 'w-72')}>
-      <Label className="text-sm" {...labelProps} aria-required={props.isRequired}>
+    <div
+      className={cx('relative flex flex-col', fullWidth ? 'w-full' : 'w-72')}
+    >
+      <Label
+        className="text-sm"
+        {...labelProps}
+        aria-required={props.isRequired}
+      >
         {label}
       </Label>
       <Input
-        className={input({ className, size })}
+        className={getTextFieldInputStyle({ className, size })}
         {...inputProps}
         onChange={onChange}
         aria-invalid={!!props.errorMessage}
@@ -53,7 +58,7 @@ function TextField(props: Partial<TextFieldProps>) {
       {props.description && (
         <div
           {...descriptionProps}
-          className={twMerge('text-gray-500 text-sm', descriptionClassName)}
+          className={twMerge('text-neutral-600 text-sm', descriptionClassName)}
         >
           {props.description}
         </div>
@@ -62,7 +67,7 @@ function TextField(props: Partial<TextFieldProps>) {
         <div
           {...errorMessageProps}
           className={mergeClassnames(
-            'text-error-900 text-xs text-danger-500',
+            'text-error-900 text-xs text-danger-700',
             errorMessageClassName
           )}
         >

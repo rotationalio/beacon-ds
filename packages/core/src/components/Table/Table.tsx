@@ -1,11 +1,6 @@
 import { useTable, useFilters, useSortBy, usePagination } from 'react-table';
 
-import {
-  SortIcon,
-  SortUpIcon,
-  SortDownIcon,
-  NoDataIcon,
-} from '../../shared/Icons';
+import { SortIcon, SortUpIcon, SortDownIcon, NoDataIcon } from '../Icon/Icons';
 import mergeClassnames from '../../utils/mergeClassnames';
 import { StatusPill } from './shared/StatusPill';
 import { ActionPill } from './shared/ActionPill';

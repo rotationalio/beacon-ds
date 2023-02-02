@@ -16,5 +16,5 @@ export * from './components/Box';
 export * from './components/Label';
 export * from './components/Menu';
 export * from './components/Toast';
-
+export * from './components/Icon';
 export * from './components/Tooltip';

@@ -9,8 +9,11 @@ export type ToastProps = {
     | 'warning'
     | 'info';
   size?: 'small' | 'medium' | 'large';
+  hasIcon?: boolean;
+  icon?: React.ReactNode;
   [key: string]: any;
   title?: string;
+  placement?: 'up' | 'down' | 'left' | 'right';
   description?: string;
   children?: React.ReactNode;
   onClose?: () => void;

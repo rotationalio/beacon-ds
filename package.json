@@ -1,6 +1,6 @@
 {
   "name": "@rotational/beacon-ds",
-  "packageManager": "yarn@3.2.1",
+  "packageManager": "yarn@3.4.1",
   "scripts": {
     "lint": "eslint --ignore-path .gitignore --quiet --no-error-on-unmatched-pattern packages/**/*{js,jsx,ts,tsx}",
     "build": "yarn build:token && yarn build:core ",
