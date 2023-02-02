@@ -1,5 +1,22 @@
 # @rotational/beacon-core
 
+## 3.0.0
+
+### Major Changes
+
+- 0deab6b: Added Tabble - Icons - Heading components
+- 6b9fdf0: Fix Modal component
+
+### Minor Changes
+
+- Files export fixes
+- Remove select component
+
+### Patch Changes
+
+- Updated dependencies [0deab6b]
+  - @rotational/beacon-foundation@3.0.0
+
 ## 2.0.0
 
 ### Major Changes

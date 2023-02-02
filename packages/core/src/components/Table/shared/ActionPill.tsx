@@ -1,7 +1,7 @@
 import mergeClassnames from '../../../utils/mergeClassnames';
 import Menu from '../../Menu/Menu';
 import useMenu from '../../../hooks/useMenu';
-import { ThreeDotIcon } from '../../../shared/Icons';
+import { ThreeDotIcon } from '../../Icon/Icons';
 import Button from '../../Button/Button';
 
 export type ActionProps = {

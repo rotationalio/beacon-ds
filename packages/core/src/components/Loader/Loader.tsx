@@ -3,6 +3,8 @@ import styled from 'styled-components';
 type LoaderProps = {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   color?: string;
+  className?: string;
+  [key: string]: any;
 };
 const Loader = (props: LoaderProps) => (
   <StyledSpinner viewBox="0 0 50 50" {...props}>

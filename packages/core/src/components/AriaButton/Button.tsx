@@ -34,7 +34,7 @@ const AriaButton = forwardRef((props: ButtonProps, ref: any) => {
   const { buttonProps } = useButton(props, ref);
   const { focusProps } = useFocusRing();
   const mergeClassname = mergeClassnames(
-    'rounded text-center text-lg font-bold text-white',
+    'min-w-[100px] rounded text-center p-auto text-lg font-bold text-white',
     className
   );
   return (

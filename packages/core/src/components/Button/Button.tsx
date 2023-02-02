@@ -31,7 +31,8 @@ const Button = forwardRef((props: BtnProps, ref: any) => {
   return (
     <StyledButton
       className={mergeClassnames(
-        'rounded-sm text-center font-bold text-white-900',
+        'transition duration-300 ease-out',
+        'min-w-[100px] rounded-sm text-center item-center font-bold text-white-900 ',
         setFontSize(size || 'medium'),
         variant === 'ghost' && setGhostVariant(),
         className
@@ -42,7 +43,7 @@ const Button = forwardRef((props: BtnProps, ref: any) => {
       {...rest}
     >
       {isLoading ? (
-        <Loader size="xs" />
+        <Loader size="xs" className="text-center item-center m-auto" />
       ) : (
         <>
           {leftIcon && <span className="pr-1">{leftIcon}</span>}

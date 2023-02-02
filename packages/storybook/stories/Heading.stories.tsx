@@ -1,4 +1,4 @@
-import Heading from '@rotational/beacon-core/src/components/Heading';
+import { Heading } from '@rotational/beacon-core/src/components/Heading';
 import { Meta, Story } from '@storybook/react';
 
 export default {

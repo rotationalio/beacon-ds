@@ -147,6 +147,9 @@
       },
       "100": {
         "value": "#FFF8EB"
+      },
+      "DEFAULT":{
+        "value": "#FF9500"
       }
     },
     "danger": {
@@ -176,6 +179,9 @@
       },
       "100": {
         "value": "#FF9680"
+      },
+      "DEFAULT":{
+        "value": "#FF380D"
       }
     },
     "white": {
@@ -282,6 +288,36 @@
     "green": {
       "light": {
         "value": "#ECFADC"
+      },
+      "success": {
+        "value": "#07bc0c"
+      },
+      "100": {
+        "value": "#ECFADC"
+      },
+      "200": {
+        "value": "#D1E7C6"
+      },
+      "300": {
+        "value": "#B7D4AF"
+      },
+      "400": {
+        "value": "#9CC199"
+      },
+      "500": {
+        "value": "#82AE82"
+      },
+      "600": {
+        "value": "#689B6B"
+      },
+      "700": {
+        "value": "#4E8855"
+      },
+      "800": {
+        "value": "#34753E"
+      },
+      "900": {
+        "value": "#1A6227"
       },
       
       "DEFAULT": {

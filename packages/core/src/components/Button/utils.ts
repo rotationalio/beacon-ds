@@ -33,16 +33,16 @@ export const getAttr = (size: TSize) => {
 export const setFontSize = (size: TSize) => {
     switch (size) {
         case 'xsmall':
-            return 'text-xs py-1 px-2';
+            return 'text-xs p-auto h-[28px]';
 
         case 'small':
-            return 'text-sm py-1 px-2';
+            return 'text-sm p-auto h-[32px]';
         case 'medium':
-            return 'text-base py-3 px-4';
+            return 'text-base p-auto h-[44px]';
         case 'large':
-            return 'text-lg py-4 px-7';
+            return 'text-lg p-auto h-[56px]';
         default:
-            return 'text-base py-3 px-4';
+            return 'text-base p-auto h-[44px]';
     }
 }
 
