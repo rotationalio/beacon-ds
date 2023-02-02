@@ -4,12 +4,15 @@ type Props = Partial<BtnProps>;
 
 const StyledButton = styled.button<Props>((props) => ({
   ...(props.variant === 'primary' && {
-    backgroundColor: 'var(--colors-blue-600)',
-    borderColor: 'var(--colors-blue-600)',
+    backgroundColor: 'var(--colors-primary-200)',
+    borderColor: 'var(--colors-primary-200)',
     '&:hover': {
       backgroundColor: 'var(--colors-blue-700)',
     },
     '&:active': {
+      backgroundColor: 'var(--colors-blue-700)',
+    },
+    '&:focus': {
       backgroundColor: 'var(--colors-blue-700)',
     },
     ':disabled': {
@@ -50,7 +53,6 @@ const StyledButton = styled.button<Props>((props) => ({
 }));
 StyledButton.defaultProps = {
   variant: 'primary',
-  size: 'medium',
   disabled: false,
 };
 
