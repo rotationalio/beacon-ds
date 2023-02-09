@@ -8,7 +8,9 @@ function Tooltip({ children, title }: TooltipProps) {
     <RadixTooltip.Provider>
       <RadixTooltip.Root>
         <RadixTooltip.Trigger asChild>
-          <button className="p-0">{children}</button>
+          <button disabled style={{ pointerEvents: 'none' }} className="p-0">
+            {children}
+          </button>
         </RadixTooltip.Trigger>
         <RadixTooltip.Portal>
           {title && (
