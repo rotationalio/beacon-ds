@@ -1,7 +1,7 @@
 {
   "name": "@rotational/beacon-core",
   "packageManager": "yarn@3.4.1",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "license": "MIT",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -21,7 +21,6 @@
     "@tanstack/react-table": "^8.7.8",
     "@testing-library/dom": "^8.20.0",
     "@types/react-table": "^7.7.14",
-    "heroicons": "^2.0.14",
     "react-aria": "^3.22.0",
     "react-table": "^7.8.0",
     "styled-components": "^5.3.5",
