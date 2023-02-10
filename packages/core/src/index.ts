@@ -19,3 +19,5 @@ export * from './components/Toast';
 export * from './components/Icon';
 export * from './components/Tooltip';
 export * from './components/Breadcrumbs';
+export * from './components/RadioGroup';
+export * from './components/Radio';
