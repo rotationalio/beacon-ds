@@ -7,12 +7,7 @@ import {
   useFocusRing,
 } from 'react-aria';
 import React from 'react';
-<<<<<<< HEAD
 import { Input, Label, Span } from './Checkbox.styles';
-=======
-import styled from 'styled-components';
-import cn from 'clsx';
->>>>>>> 9a12f25 (sc-12341 Beacon FE : Checkbox Element Component)
 
 export type CheckboxProps = {
   isValid?: boolean;
@@ -20,24 +15,6 @@ export type CheckboxProps = {
 } & AriaCheckboxProps &
   ToggleProps;
 
-<<<<<<< HEAD
-=======
-const Label = styled.label((props) => ({
-  display: 'flex',
-  alignItems: 'center',
-}));
-
-const Input = styled.input((props) => ({
-  marginRight: 8,
-}));
-
-const Span = styled.span((props: { isDisabled?: boolean }) => ({
-  ...(props?.isDisabled && {
-    color: 'gray',
-  }),
-}));
-
->>>>>>> 9a12f25 (sc-12341 Beacon FE : Checkbox Element Component)
 function Checkbox(props: CheckboxProps) {
   const { children } = props;
   const { labelProps, fieldProps } = useLabel(props);
@@ -52,10 +29,6 @@ function Checkbox(props: CheckboxProps) {
     state,
     ref
   );
-<<<<<<< HEAD
-=======
-  console.log('[] inputProps', inputProps);
->>>>>>> 9a12f25 (sc-12341 Beacon FE : Checkbox Element Component)
 
   const { isFocusVisible, focusProps } = useFocusRing();
   const isSelected = state.isSelected && !props.isIndeterminate;
