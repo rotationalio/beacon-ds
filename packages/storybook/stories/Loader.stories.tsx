@@ -13,6 +13,7 @@ export const Default = Template.bind({});
 export const XSmall = Template.bind({});
 XSmall.args = {
   size: 'xs',
+  content: 'Loading...',
 };
 
 export const Small = Template.bind({});

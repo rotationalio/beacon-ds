@@ -1,6 +1,7 @@
 import { useTable, useFilters, useSortBy, usePagination } from 'react-table';
 
 import { SortIcon, SortUpIcon, SortDownIcon, NoDataIcon } from '../Icon/Icons';
+import Loader from '../Loader/Loader';
 import mergeClassnames from '../../utils/mergeClassnames';
 import { StatusPill } from './shared/StatusPill';
 import { ActionPill } from './shared/ActionPill';
@@ -16,6 +17,7 @@ interface TableProps {
   thClassName?: string;
   statusClassName?: string;
   actionsClassName?: string;
+  isLoading?: boolean;
 }
 
 function Table({
@@ -24,11 +26,10 @@ function Table({
   className,
   tableClassName,
   theadClassName,
-  tbodyClassName,
   trClassName,
-  thClassName,
   statusClassName,
   actionsClassName,
+  isLoading = false,
 }: TableProps) {
   // Use the state and functions returned from useTable to build your UI
   const {
@@ -111,13 +112,29 @@ function Table({
                   {...getTableBodyProps()}
                   className="bg-white divide-y divide-gray-[#1C1C1C]"
                 >
+                  {isLoading && (
+                    <tr className="text-center items-center">
+                      <td
+                        colSpan={columns.length}
+                        className="px-auto py-4 whitespace-nowrap text-center h-[100px] items-center"
+                      >
+                        <div className="flex flex-col text-center justify-center">
+                          <Loader size="md" />
+                        </div>
+                        <p className="mt-2 text-sm text-gray-500">
+                          Please wait while we load the data
+                        </p>
+                      </td>
+                    </tr>
+                  )}
                   {(page.length > 0 &&
                     page.map((row, i) => {
                       prepareRow(row);
 
                       return (
                         <tr {...row.getRowProps()}>
-                          {row.cells.length > 0 &&
+                          {!isLoading &&
+                            row.cells.length > 0 &&
                             row.cells.map((cell) => {
                               return (
                                 <td
@@ -147,17 +164,19 @@ function Table({
                       );
                     })) || (
                     <tr className="text-center items-center">
-                      <td
-                        colSpan={columns.length}
-                        className="px-auto py-4 whitespace-nowrap text-center h-[100px] items-center"
-                      >
-                        <div className="flex text-center justify-center">
-                          <NoDataIcon className="w-16 h-16 text-gray-500" />
-                        </div>
-                        <p className="mt-2 text-sm text-gray-500">
-                          No data available
-                        </p>
-                      </td>
+                      {!isLoading && (
+                        <td
+                          colSpan={columns.length}
+                          className="px-auto py-4 whitespace-nowrap text-center h-[100px] items-center"
+                        >
+                          <div className="flex text-center justify-center">
+                            <NoDataIcon className="w-16 h-16 text-gray-500" />
+                          </div>
+                          <p className="mt-2 text-sm text-gray-500">
+                            No data available
+                          </p>
+                        </td>
+                      )}
                     </tr>
                   )}
                 </tbody>
