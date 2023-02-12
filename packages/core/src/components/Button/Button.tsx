@@ -20,8 +20,8 @@ export type BtnProps = {
 const Button = forwardRef((props: BtnProps, ref: any) => {
   const {
     children,
-    variant,
-    size,
+    variant = 'primary',
+    size = 'medium',
     className,
     leftIcon,
     rightIcon,
@@ -34,10 +34,10 @@ const Button = forwardRef((props: BtnProps, ref: any) => {
     <StyledButton
       className={mergeClassnames(
         'transition duration-300 ease-out',
-        'min-w-[100px] rounded-sm text-center item-center font-bold text-white-900 px-2',
-        setBtnVariant(variant || 'primary'),
+        'min-w-[100px] rounded-sm text-center text-lg item-center font-bold text-white px-2',
+        setBtnVariant(variant),
+        setFontSize(size),
         disabled && setDisabledCss(),
-        setFontSize(size || 'medium'),
         className
       )}
       ref={ref}

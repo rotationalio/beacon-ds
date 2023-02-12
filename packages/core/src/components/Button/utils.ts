@@ -38,16 +38,16 @@ export const setDisabledCss = () => {
 export const setFontSize = (size: TSize) => {
     switch (size) {
         case 'xsmall':
-            return 'text-xs p-auto h-[28px]';
+            return 'text-xs p-auto min-h-[28px]';
 
         case 'small':
-            return 'text-sm p-auto h-[32px]';
+            return 'text-sm p-auto min-h-[32px]';
         case 'medium':
-            return 'text-base p-auto h-[44px]';
+            return 'text-base p-auto min-h-[44px]';
         case 'large':
-            return 'text-lg p-auto h-[56px]';
+            return 'text-lg p-auto min-h-[56px]';
         default:
-            return 'text-base p-auto h-[44px]';
+            return 'text-base p-auto mih-[44px]';
     }
 }
 
