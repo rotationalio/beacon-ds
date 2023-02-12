@@ -1,1 +1,1 @@
-export { default as AriaButton } from './Button';
+export { default as AriaButton } from './AriaButton';

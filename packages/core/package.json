@@ -9,9 +9,10 @@
     "lib"
   ],
   "scripts": {
-    "build": "rm -rf lib && yarn build:css && tsc",
+    "build": "rm -rf lib  && yarn build:css && yarn copy:twConfig && tsc",
     "watch:css": "npx tailwindcss -i ./src/style.css -o ./lib/style.css --watch",
     "build:css": "npx tailwindcss -i ./src/style.css -o ./lib/style.css",
+    "copy:twConfig": "cp tailwind.config.js lib/tailwind.config.js",
     "test": "jest"
   },
   "dependencies": {

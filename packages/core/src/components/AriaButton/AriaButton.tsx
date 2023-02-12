@@ -6,7 +6,7 @@ import {
   useFocusRing,
   mergeProps,
 } from 'react-aria';
-import { button } from './Button.styles';
+import { button } from './AriaButton.styles';
 
 import mergeClassnames from '../../utils/mergeClassnames';
 
