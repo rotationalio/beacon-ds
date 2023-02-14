@@ -1,3 +1,2 @@
-export { default } from './mergeClassnames';
-export * from './extractProps';
-export * from './mergeClassnames';
+export { default as mergeClassnames } from './mergeClassnames';
+export type { ExtractProps } from './extractProps';

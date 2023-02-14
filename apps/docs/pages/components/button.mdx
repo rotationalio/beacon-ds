@@ -33,7 +33,7 @@ import { Button } from '@rotational/beacon-core';
 
 {' '}
 import styles from '../../components/counters.module.css'
-import '@rotational/beacon-core/lib/style.css'
+import '@rotational/beacon-core/lib/style.css';
 
 export const Counter = () => {
   const [count, setCount] = useState(0);
@@ -47,7 +47,7 @@ export const Counter = () => {
           onClick={() => setCount(count + 1)}
           className="text-white-900"
         >
-          Clicked {count} times
+          {count}
         </Button>
       </div>
       <div>
@@ -58,7 +58,7 @@ export const Counter = () => {
           onClick={() => setCount(count + 1)}
           className="text-white-900"
         >
-          Clicked {count} times
+          {count}
         </Button>
       </div>
       <div>
@@ -69,7 +69,7 @@ export const Counter = () => {
           onClick={() => setCount(count + 1)}
           className="text-white-900"
         >
-          Clicked {count} times
+          {count}
         </Button>
       </div>
     </div>

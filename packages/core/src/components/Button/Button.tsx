@@ -3,7 +3,7 @@ import StyledButton from './Button.styles';
 import { BtnSize, BtnVariant } from './Button.types';
 import mergeClassnames from '../../utils/mergeClassnames';
 import Loader from '../Loader/Loader';
-import { setFontSize, setGhostVariant } from './utils';
+import { setFontSize, setBtnVariant, setDisabledCss } from './utils';
 export type BtnProps = {
   children: ReactNode;
   variant?: BtnVariant;
@@ -12,6 +12,7 @@ export type BtnProps = {
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
   isLoading?: Boolean;
+  disabled?: Boolean;
   tabIndex?: number;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 } & React.HTMLAttributes<HTMLButtonElement>;
@@ -19,12 +20,13 @@ export type BtnProps = {
 const Button = forwardRef((props: BtnProps, ref: any) => {
   const {
     children,
-    variant,
-    size,
+    variant = 'primary',
+    size = 'medium',
     className,
     leftIcon,
     rightIcon,
     isLoading,
+    disabled,
     ...rest
   } = props;
 
@@ -32,13 +34,12 @@ const Button = forwardRef((props: BtnProps, ref: any) => {
     <StyledButton
       className={mergeClassnames(
         'transition duration-300 ease-out',
-        'min-w-[100px] rounded-sm text-center item-center font-bold text-white-900 ',
-        setFontSize(size || 'medium'),
-        variant === 'ghost' && setGhostVariant(),
+        'min-w-[100px] rounded-sm text-center text-lg item-center font-bold text-white px-2',
+        setBtnVariant(variant),
+        setFontSize(size),
+        disabled && setDisabledCss(),
         className
       )}
-      variant={variant}
-      size={size}
       ref={ref}
       {...rest}
     >

@@ -46,7 +46,11 @@ function Card<T>(props: Props & T) {
   return (
     <CardWrapper
       as={Component}
-      className={mergeClassnames(styleClasses, className)}
+      className={mergeClassnames(
+        'border border-sm rounded-sm shadow-sm overflow-hidden bg-white padding-4',
+        styleClasses,
+        className
+      )}
       {...rest}
     >
       {imgSrc && (
