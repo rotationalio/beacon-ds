@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+
 import Box from '../Box';
 export const CardWrapper = styled(Box)({
   display: 'flex',
   borderRadius: 'var(--border-radius-1)',
-  boxShadow: 'var(--shadow-1)',
+  borderColor: '#0000004d',
+  borderStyle: 'solid',
   overflow: 'hidden',
 });
 

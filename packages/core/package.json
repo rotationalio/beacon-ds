@@ -22,7 +22,9 @@
     "@tanstack/react-table": "^8.7.8",
     "@testing-library/dom": "^8.20.0",
     "@types/react-table": "^7.7.14",
+    "polished": "^4.2.2",
     "react-aria": "^3.22.0",
+    "react-stately": "^3.20.0",
     "react-table": "^7.8.0",
     "styled-components": "^5.3.5",
     "tailwindcss-radix": "^2.7.0"

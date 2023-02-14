@@ -1,10 +1,5 @@
-import { ToggleProps, useToggleState } from 'react-stately';
-import {
-  AriaSwitchProps,
-  useFocusRing,
-  useSwitch,
-  VisuallyHidden,
-} from 'react-aria';
+import { useToggleState } from 'react-stately';
+import { useFocusRing, useSwitch, VisuallyHidden } from 'react-aria';
 import React from 'react';
 import { SwitchProps } from './Switch.type';
 
