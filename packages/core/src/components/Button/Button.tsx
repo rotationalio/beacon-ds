@@ -14,7 +14,6 @@ export type BtnProps = {
   isLoading?: Boolean;
   disabled?: Boolean;
   tabIndex?: number;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 } & React.HTMLAttributes<HTMLButtonElement>;
 
 const Button = forwardRef((props: BtnProps, ref: any) => {
