@@ -33,10 +33,10 @@ const Button = forwardRef((props: BtnProps, ref: any) => {
   return (
     <StyledButton
       className={mergeClassnames(
-        'transition duration-300 ease-out',
-        'min-w-[100px] rounded-sm text-center text-lg item-center font-bold text-white px-2',
-        setBtnVariant(variant),
         setFontSize(size),
+        'transition duration-300 ease-out',
+        'min-w-[100px] rounded-sm item-center font-bold text-white px-2',
+        setBtnVariant(variant),
         disabled && setDisabledCss(),
         className
       )}
