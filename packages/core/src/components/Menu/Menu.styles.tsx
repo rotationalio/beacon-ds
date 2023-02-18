@@ -29,7 +29,7 @@ export const StyledListbox = styled('ul')(
   border-radius: 12px;
   overflow: auto;
   outline: 0px;
-  background: ${color['--colors-primary-900']};
+  background: ${color['--colors-secondary-900']};
   border: 1px solid ${color['--colors-neutral-200']};
   color: #fff;
   box-shadow: 0px 4px 30px ${color['--colors-neutral-200']};
