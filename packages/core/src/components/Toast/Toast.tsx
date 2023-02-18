@@ -83,19 +83,21 @@ export const Toast = React.forwardRef<HTMLLIElement, ToastWithRadixProps>(
             <div className="flex">
               <div className="flex flex-col px-2 space-y-1">
                 <div className="h-0 flex-1 flex">
-                  <ToastPrimitive.Close
-                    className={mergeClassnames(
-                      'w-full  border-transparent px-3 py-2 flex items-center justify-center text-sm font-medium text-gray-700  hover:bg-gray-50  focus:z-10 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75',
-                      variant && getToastColorVariantStyle(variant)
-                    )}
-                  >
-                    <XIcon
+                  {onClose && (
+                    <ToastPrimitive.Close
                       className={mergeClassnames(
-                        'h-5 w-5',
+                        'w-full  border-transparent px-3 py-2 flex items-center justify-center text-sm font-medium text-gray-700  hover:bg-gray-50  focus:z-10 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75',
                         variant && getToastColorVariantStyle(variant)
                       )}
-                    />
-                  </ToastPrimitive.Close>
+                    >
+                      <XIcon
+                        className={mergeClassnames(
+                          'h-5 w-5',
+                          variant && getToastColorVariantStyle(variant)
+                        )}
+                      />
+                    </ToastPrimitive.Close>
+                  )}
                 </div>
               </div>
             </div>

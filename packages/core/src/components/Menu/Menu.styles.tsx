@@ -4,22 +4,22 @@ import {
   PopperUnstyled,
 } from '@mui/base';
 import styled from 'styled-components';
-
-const grey = {
-  50: '#f6f8fa',
-  100: '#eaeef2',
-  200: '#d0d7de',
-  300: '#afb8c1',
-  400: '#8c959f',
-  500: '#6e7781',
-  600: '#57606a',
-  700: '#424a53',
-  800: '#32383f',
-  900: '#24292f',
-};
+import { color } from '../../utils/tokens/colors';
+// const grey = {
+//   50: '#f6f8fa',
+//   100: '#eaeef2',
+//   200: '#d0d7de',
+//   300: '#afb8c1',
+//   400: '#8c959f',
+//   500: '#6e7781',
+//   600: '#57606a',
+//   700: '#424a53',
+//   800: '#32383f',
+//   900: '#24292f',
+// };
 
 export const StyledListbox = styled('ul')(
-  ({ theme }) => `
+  () => `
   font-family: IBM Plex Sans, sans-serif;
   font-size: 0.875rem;
   box-sizing: border-box;
@@ -29,15 +29,15 @@ export const StyledListbox = styled('ul')(
   border-radius: 12px;
   overflow: auto;
   outline: 0px;
-  background: var(--colors-secondary-900);
-  border: 1px solid ${grey[200]};
+  background: ${color['--colors-primary-900']};
+  border: 1px solid ${color['--colors-neutral-200']};
   color: #fff;
-  box-shadow: 0px 4px 30px ${grey[200]};
+  box-shadow: 0px 4px 30px ${color['--colors-neutral-200']};
   `
 );
 
 export const StyledMenuItem = styled(MenuItemUnstyled)(
-  ({ theme }) => `
+  () => `
   list-style: none;
   padding: 8px 14px;
   cursor: default;
@@ -49,12 +49,12 @@ export const StyledMenuItem = styled(MenuItemUnstyled)(
   }
 
   &.${menuItemUnstyledClasses.disabled} {
-    color: ${grey[400]};
+    color: ${color['--colors-neutral-400']};
   }
 
   &:hover:not(.${menuItemUnstyledClasses.disabled}) {
-    background-color: ${grey[100]};
-    color: ${grey[900]};
+    background-color: ${color['--colors-neutral-100']};
+    color: ${color['--colors-neutral-900']};
   }
   `
 );
@@ -78,5 +78,5 @@ export const MenuSectionLabel = styled('span')`
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
-  color: ${grey[600]};
+  color: ${color['--colors-neutral-600']};
 `;
