@@ -53,7 +53,6 @@ const Template: Story<typeof Menu> = (args) => {
     <div className="text-center">
       <div>
         <Button
-          type="button"
           onClick={handleButtonClick}
           onKeyDown={handleButtonKeyDown}
           ref={buttonRef}
