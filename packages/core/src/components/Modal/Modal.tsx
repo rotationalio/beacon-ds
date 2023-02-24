@@ -2,7 +2,7 @@ import React from 'react';
 import { Backdrop, Container, StyledModal, Title } from './Modal.styles';
 import { twMerge } from 'tailwind-merge';
 import { ModalProps } from './Modal.types';
-import { Button } from 'components/Button';
+import { Button } from '../Button';
 import CloseIcon from './CloseIcon';
 function Modal(props: ModalProps, ref: React.ForwardedRef<HTMLDivElement>) {
   const {
@@ -24,7 +24,10 @@ function Modal(props: ModalProps, ref: React.ForwardedRef<HTMLDivElement>) {
         className={twMerge(containerClassName)}
       >
         {onClose && (
-          <Button variant="ghost" className="absolute top-0 right-0 p-2">
+          <Button
+            variant="ghost"
+            className="absolute top-0 -right-10 p-2 border-none bg-transparent"
+          >
             <CloseIcon onClick={onClose} />
           </Button>
         )}

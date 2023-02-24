@@ -19,6 +19,7 @@ Default.args = {
   fullScreen: false,
   open: true,
   title: 'Change password',
+  onClose: () => {},
   children: (
     <>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, error</>
   ),
