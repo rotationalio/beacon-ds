@@ -6,6 +6,7 @@ export type ModalProps = {
   containerClassName?: string;
   fullScreen?: boolean;
   size?: TSize;
+  onClose?: () => void;
   titleProps?: React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLHeadingElement>,
     HTMLHeadingElement

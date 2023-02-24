@@ -14,6 +14,8 @@ export type BtnProps = {
   isLoading?: Boolean;
   disabled?: Boolean;
   tabIndex?: number;
+  onclick?: () => void;
+  onChange?: () => void;
 } & React.HTMLAttributes<HTMLButtonElement>;
 
 const Button = forwardRef((props: BtnProps, ref: any) => {
