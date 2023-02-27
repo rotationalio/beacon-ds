@@ -14,7 +14,8 @@ export type BtnProps = {
   isLoading?: Boolean;
   disabled?: Boolean;
   tabIndex?: number;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onclick?: () => void;
+  onChange?: () => void;
 } & React.HTMLAttributes<HTMLButtonElement>;
 
 const Button = forwardRef((props: BtnProps, ref: any) => {
@@ -34,9 +35,9 @@ const Button = forwardRef((props: BtnProps, ref: any) => {
     <StyledButton
       className={mergeClassnames(
         'transition duration-300 ease-out',
-        'min-w-[100px] rounded-sm text-center text-lg item-center font-bold text-white px-2',
-        setBtnVariant(variant),
         setFontSize(size),
+        'min-w-[100px] rounded-sm item-center font-bold text-white px-2',
+        setBtnVariant(variant),
         disabled && setDisabledCss(),
         className
       )}

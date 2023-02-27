@@ -1,4 +1,4 @@
-export default function CloseIcon() {
+export default function CloseIcon(props: React.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -7,6 +7,7 @@ export default function CloseIcon() {
       strokeWidth={2}
       stroke="currentColor"
       className="w-6 h-6"
+      {...props}
     >
       <path
         strokeLinecap="round"

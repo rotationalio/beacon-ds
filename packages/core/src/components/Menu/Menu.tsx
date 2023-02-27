@@ -1,10 +1,10 @@
 import { Popper, StyledListbox, StyledMenuItem } from './Menu.styles';
 import { MenuUnstyled } from '@mui/base';
 import React from 'react';
-
 export interface MenuSectionProps {
   children: React.ReactNode;
   label: string;
+  className?: string;
 }
 
 const Menu = (props: React.ComponentPropsWithoutRef<typeof MenuUnstyled>) => {
