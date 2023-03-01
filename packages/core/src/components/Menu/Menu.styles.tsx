@@ -20,7 +20,7 @@ import { color } from '../../utils/tokens/colors';
 
 export const StyledListbox = styled('ul')(
   () => `
-  font-family: IBM Plex Sans, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 0.875rem;
   box-sizing: border-box;
   margin: 12px 0;
