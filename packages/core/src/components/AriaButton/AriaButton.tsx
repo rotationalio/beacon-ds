@@ -7,7 +7,7 @@ import {
   mergeProps,
 } from 'react-aria';
 import { button } from './AriaButton.styles';
-
+import Loader from '../Loader/Loader';
 import mergeClassnames from '../../utils/mergeClassnames';
 
 type BtnVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost';
@@ -29,8 +29,16 @@ export type ButtonProps = {
   AriaButtonProps<'button'>;
 
 const AriaButton = forwardRef((props: ButtonProps, ref: any) => {
-  const { children, color, variant, size, className, leftIcon, rightIcon } =
-    props;
+  const {
+    children,
+    color,
+    variant,
+    size,
+    className,
+    leftIcon,
+    rightIcon,
+    isLoading,
+  } = props;
   const { buttonProps } = useButton(props, ref);
   const { focusProps } = useFocusRing();
   const mergeClassname = mergeClassnames(
@@ -47,9 +55,15 @@ const AriaButton = forwardRef((props: ButtonProps, ref: any) => {
       {...mergeProps(buttonProps, focusProps)}
       ref={ref}
     >
-      {leftIcon && <span className="pr-1">{leftIcon}</span>}
-      {children}
-      {rightIcon && <span className="pl-1">{rightIcon}</span>}
+      {isLoading ? (
+        <Loader size="xs" className="text-center item-center m-auto" />
+      ) : (
+        <>
+          {leftIcon && <span className="pr-1">{leftIcon}</span>}
+          {children}
+          {rightIcon && <span className="pl-1">{rightIcon}</span>}
+        </>
+      )}
     </button>
   );
 });

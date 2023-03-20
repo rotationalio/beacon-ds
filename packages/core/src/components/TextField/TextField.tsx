@@ -15,6 +15,7 @@ export type TextFieldProps = {
   rightIcon?: ReactNode;
   [key: string]: any;
   errorMessageClassName?: string;
+  labelClassName?: string;
   descriptionClassName?: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 } & AriaTextFieldOptions<'input'>;
@@ -27,6 +28,7 @@ function TextField(props: Partial<TextFieldProps>) {
     fullWidth,
     rightIcon,
     errorMessageClassName,
+    labelClassName,
     descriptionClassName,
     onChange,
   } = props;
@@ -39,7 +41,7 @@ function TextField(props: Partial<TextFieldProps>) {
       className={cx('relative flex flex-col', fullWidth ? 'w-full' : 'w-72')}
     >
       <Label
-        className="text-sm"
+        className={twMerge('text-sm', labelClassName)}
         {...labelProps}
         aria-required={props.isRequired}
       >

@@ -7,8 +7,6 @@ export interface MenuSectionProps {
   className?: string;
 }
 
-const MenuItemStyle = S;
-
 const Menu = (props: React.ComponentPropsWithoutRef<typeof MenuUnstyled>) => {
   const { slots, ...rest } = props;
   return (
