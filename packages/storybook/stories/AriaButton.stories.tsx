@@ -21,6 +21,7 @@ Default.args = {
   leftIcon: <>😂</>,
   rightIcon: <>😇</>,
   isDisabled: false,
+  isLoading: false,
   size: 'small',
 };
 
