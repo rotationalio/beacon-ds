@@ -24,6 +24,7 @@ export type ButtonProps = {
   rightIcon?: ReactNode;
   isLoading?: Boolean;
   tabIndex?: number;
+  isDisabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 } & Omit<VariantProps<typeof button>, 'intent' | 'size'> &
   AriaButtonProps<'button'>;
@@ -38,6 +39,7 @@ const AriaButton = forwardRef((props: ButtonProps, ref: any) => {
     leftIcon,
     rightIcon,
     isLoading,
+    isDisabled,
   } = props;
   const { buttonProps } = useButton(props, ref);
   const { focusProps } = useFocusRing();
@@ -50,10 +52,12 @@ const AriaButton = forwardRef((props: ButtonProps, ref: any) => {
       className={button({
         intent: color || variant,
         size,
+        isDisabled,
         className: mergeClassname,
       })}
       {...mergeProps(buttonProps, focusProps)}
       ref={ref}
+      disabled={!!isDisabled}
     >
       {isLoading ? (
         <Loader size="xs" className="text-center item-center m-auto" />

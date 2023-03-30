@@ -28,6 +28,9 @@ export const button = cva(['font-regular rounded-lg rounded-full px-2 py-2'], {
       medium: ['text-base', 'py-3', 'px-4', 'min-h-[40px]'],
       large: ['text-xl', 'py-4', 'px-7', 'min-h-[50px]'],
     },
+    isDisabled: {
+      true: 'cursor-not-allowed',
+    },
   },
   defaultVariants: {
     intent: 'primary',
