@@ -69,7 +69,7 @@ function TextField(props: Partial<TextFieldProps>) {
         <div
           {...errorMessageProps}
           className={mergeClassnames(
-            'text-error-900 text-xs text-danger-700',
+            'py-2 text-error-900 text-xs text-danger-700 ',
             errorMessageClassName
           )}
         >
