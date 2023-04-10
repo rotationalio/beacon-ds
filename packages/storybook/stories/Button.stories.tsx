@@ -1,4 +1,4 @@
-import { Button, BtnProps } from '@rotational/beacon-core';
+import { Button } from '@rotational/beacon-core';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
@@ -9,7 +9,7 @@ export default {
     variant: {
       control: {
         type: 'select',
-        options: ['primary', 'secondary', 'tertiary', 'ghost'],
+        options: ['primary', 'secondary', 'ghost'],
       },
     },
     size: {
@@ -34,9 +34,9 @@ export default {
       handles: ['click .btn'],
     },
   },
-} as ComponentMeta<typeof BtnProps>;
+} as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<BtnProps> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -44,6 +44,9 @@ Default.args = {
   disabled: false,
   isLoading: false,
   className: '',
+  onclick: () => {
+    console.log('clicked');
+  },
 };
 
 export const Primary = Template.bind({});
@@ -56,12 +59,6 @@ export const Secondary = Template.bind({});
 Secondary.args = {
   ...Default.args,
   variant: 'secondary',
-};
-
-export const Tertiary = Template.bind({});
-Tertiary.args = {
-  ...Default.args,
-  variant: 'tertiary',
 };
 
 export const Ghost = Template.bind({});

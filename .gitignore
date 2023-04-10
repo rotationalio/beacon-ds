@@ -65,3 +65,4 @@ coverage
 packages/**/lib/
 .yarn/cache
 .yarn*
+node_modules
