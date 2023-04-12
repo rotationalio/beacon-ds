@@ -1,3 +1,2 @@
-
-export type BtnVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost';
-export type BtnSize = 'xsmall' | 'small' | 'medium' | 'large';
+export type BtnVariant = 'primary' | 'secondary' | 'ghost';
+export type BtnSize = 'small' | 'medium' | 'large';
