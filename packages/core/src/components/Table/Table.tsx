@@ -1,4 +1,11 @@
-import { useTable, useFilters, useSortBy, usePagination } from 'react-table';
+import {
+  useTable,
+  useFilters,
+  useSortBy,
+  usePagination,
+  Column,
+  Row,
+} from 'react-table';
 
 import { SortIcon, SortUpIcon, SortDownIcon, NoDataIcon } from '../Icon/Icons';
 import Loader from '../Loader/Loader';
@@ -6,8 +13,8 @@ import mergeClassnames from '../../utils/mergeClassnames';
 import { StatusPill } from './shared/StatusPill';
 import { ActionPill } from './shared/ActionPill';
 
-interface TableProps {
-  columns: any;
+export interface TableProps {
+  columns: Column[];
   data: any;
   className?: string;
   tableClassName?: string;
@@ -18,12 +25,13 @@ interface TableProps {
   statusClassName?: string;
   actionsClassName?: string;
   isLoading?: boolean;
+  onRowClick?: (params: Row) => void;
 }
 
 function Table({
   columns,
   data,
-  className,
+  onRowClick,
   tableClassName,
   theadClassName,
   trClassName,
@@ -132,7 +140,13 @@ function Table({
                       prepareRow(row);
 
                       return (
-                        <tr {...row.getRowProps()}>
+                        <tr
+                          {...row.getRowProps()}
+                          onClick={() => onRowClick && onRowClick(row)}
+                          {...(onRowClick && {
+                            className: 'cursor-pointer hover:bg-gray-100',
+                          })}
+                        >
                           {!isLoading &&
                             row.cells.length > 0 &&
                             row.cells.map((cell) => {

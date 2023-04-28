@@ -1,13 +1,13 @@
-import { Table } from '@rotational/beacon-core';
+import { Table, TableProps } from '@rotational/beacon-core';
 
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
 export default {
   title: 'beacon/Table',
   component: Table,
-} as Meta<typeof Table>;
+} as Meta<TableProps>;
 
-const Template: Story<typeof Table> = (args) => <Table {...args} />;
+const Template: StoryFn<TableProps> = (args) => <Table {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -75,6 +75,9 @@ Default.args = {
       ],
     },
   ],
+  onRowClick: (params) => {
+    console.log('clicked!', params);
+  },
 };
 
 export const NoData = Template.bind({});
