@@ -3,7 +3,7 @@ import { BtnProps } from './Button';
 import { cssVar, lighten } from 'polished';
 
 const primaryColor = cssVar('--colors-primary-default') as string;
-const secondaryColor = cssVar('--colors-secondary-900') as string;
+const secondaryColor = cssVar('--colors-primary-400') as string;
 const grayColor = cssVar('--colors-neutral-300') as string;
 
 export const StyledButton = styled.button<BtnProps>`
