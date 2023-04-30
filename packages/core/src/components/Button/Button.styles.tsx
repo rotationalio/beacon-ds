@@ -8,12 +8,7 @@ const grayColor = cssVar('--colors-neutral-300') as string;
 
 export const StyledButton = styled.button<BtnProps>`
   /* base */
-  line-height: 1.75;
   cursor: ${(props) => (props.onClick ? 'pointer' : 'auto')};
-  color: #fff;
-  font-size: 14px;
-  padding: 4px 8px;
-  min-height: 28px;
   background-color: inherit;
   transition: background-color 200ms ease;
   border-radius: 5px;
@@ -67,6 +62,7 @@ const getSizeStyles = (size: BtnProps['size'] = 'medium') => {
       padding: 8px 12px;
       font-size: 18px;
     `,
+    custom: css``,
   }[size];
 };
 
@@ -78,17 +74,7 @@ const getVariantStyles = (variant: BtnProps['variant'] = 'primary') => {
     secondary: css`
       background-color: ${secondaryColor};
     `,
-    ghost: css`
-      background-color: #fff;
-      color: #000;
-      :hover {
-        background-color: ${grayColor};
-      }
-      :disabled {
-        background-color: transparent;
-        opacity: 0.4;
-      }
-    `,
+    ghost: css``,
   }[variant];
 };
 

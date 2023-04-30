@@ -2,6 +2,7 @@ import React, { ReactNode, forwardRef } from 'react';
 import { StyledButton } from './Button.styles';
 import { BtnSize, BtnVariant } from './Button.types';
 import Loader from '../Loader/Loader';
+import { mergeClassnames } from '../../utils';
 
 export type BtnProps = {
   children: ReactNode;
@@ -25,6 +26,7 @@ const Button = forwardRef<HTMLButtonElement, BtnProps>((props, ref) => {
     leftIcon,
     rightIcon,
     isLoading,
+    className,
     variant = 'primary',
     size = 'medium',
     ...rest
@@ -35,6 +37,10 @@ const Button = forwardRef<HTMLButtonElement, BtnProps>((props, ref) => {
       size={size}
       variant={variant}
       isLoading={isLoading}
+      className={mergeClassnames(
+        'line-height-1.75 cursor-pointer text-white font-size-14 px-4 py-2 min-h-[28px] bg-inherit transition-colors duration-200 ease-in-out rounded-5 focus:outline-none text-[14px]',
+        className
+      )}
       {...rest}
       ref={ref}
     >

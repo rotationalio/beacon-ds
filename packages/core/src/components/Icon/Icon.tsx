@@ -7,6 +7,7 @@ import {
   ErrorIcon,
   WarningIcon,
   InfoIcon,
+  HThreeDotIcon,
 } from './Icons';
 
 const Icon = () => {};
@@ -19,6 +20,7 @@ Icon.Success = SuccessIcon;
 Icon.Error = ErrorIcon;
 Icon.Warning = WarningIcon;
 Icon.Info = InfoIcon;
+Icon.HThreeDot = HThreeDotIcon;
 
 Icon.displayName = 'Icon';
 
