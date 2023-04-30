@@ -64,7 +64,7 @@ Secondary.args = {
 export const Ghost = Template.bind({});
 Ghost.args = {
   ...Default.args,
-  className: 'text-[#000] border-gray-500 border-2 h-10 w-20 rounded-5',
+  className: 'text-black border-gray-500 border-2 h-10 w-20 rounded-5',
   variant: 'ghost',
 };
 
