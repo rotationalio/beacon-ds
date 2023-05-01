@@ -38,7 +38,9 @@ const Button = forwardRef<HTMLButtonElement, BtnProps>((props, ref) => {
       variant={variant}
       isLoading={isLoading}
       className={mergeClassnames(
-        'line-height-1.75 cursor-pointer text-white font-size-14 px-4 py-2 min-h-[28px] bg-inherit transition-colors duration-200 ease-in-out rounded-5 focus:outline-none text-[14px]',
+        'line-height-1.75 cursor-pointer text-white font-size-14 px-4 py-2 min-h-[28px] bg-inherit transition-colors duration-200 ease-in-out rounded-5 focus:outline-none text-[14px] font-bold',
+        variant === 'ghost' &&
+          'text-black border-gray-500 border-2 h-10 w-20 rounded-5',
         className
       )}
       {...rest}

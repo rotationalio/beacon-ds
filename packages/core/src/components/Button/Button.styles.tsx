@@ -1,14 +1,13 @@
 import styled, { css } from 'styled-components';
 import { BtnProps } from './Button';
-import { cssVar, lighten } from 'polished';
+import { lighten } from 'polished';
 
-const primaryColor = cssVar('--colors-primary-default') as string;
-const secondaryColor = cssVar('--colors-primary-400') as string;
-const grayColor = cssVar('--colors-neutral-300') as string;
+const primaryColor = '#1D65A6';
+const secondaryColor = '#E66809';
+const grayColor = '#DEE2E6';
 
 export const StyledButton = styled.button<BtnProps>`
   /* base */
-  cursor: ${(props) => (props.onClick ? 'pointer' : 'auto')};
   background-color: inherit;
   transition: background-color 200ms ease;
   border-radius: 5px;
