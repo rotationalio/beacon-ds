@@ -1,7 +1,7 @@
 import mergeClassnames from '../../../utils/mergeClassnames';
 import Menu from '../../Menu/Menu';
 import useMenu from '../../../hooks/useMenu';
-import { ThreeDotIcon } from '../../Icon/Icons';
+import { HThreeDotIcon } from '../../Icon/Icons';
 import Button from '../../Button/Button';
 
 export type ActionProps = {
@@ -29,9 +29,10 @@ export function ActionPill({ actions, className }: ActionPillProps) {
         aria-controls={isOpen ? 'wrapped-menu' : undefined}
         aria-expanded={isOpen || undefined}
         aria-haspopup="menu"
-        className="border-none focus:outline-none focus:ring-0 focus:ring-offset-0 focus:border-none h-6 w-6"
+        size="custom"
+        className="border-none focus:outline-none focus:ring-0 focus:ring-offset-0 focus:border-none h-[16px] w-[16px] p-0"
       >
-        <ThreeDotIcon />
+        <HThreeDotIcon className="w-[16px] h-[16px]" />
       </Button>
       {actions.length > 0 && (
         <>

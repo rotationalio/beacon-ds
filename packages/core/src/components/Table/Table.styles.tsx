@@ -9,7 +9,6 @@ const StyledBase = styled.div`
 const StyledTable = styled.table`
   width: 100%;
   border-collapse: collapse;
-  color: #686f7a;
   tbody:before {
     content: '-';
     display: block;
@@ -21,7 +20,6 @@ const StyledTable = styled.table`
 const StyledTh = styled.th`
   text-align: ${(props) => (props.align ? props.align : 'left')};
   font-size: 18px;
-  color: #686f7a;
   font-weight: 700;
   opacity: 0.65;
 `;

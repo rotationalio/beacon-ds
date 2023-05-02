@@ -1,7 +1,7 @@
 {
   "name": "@rotational/beacon-core",
   "packageManager": "yarn@3.4.1",
-  "version": "2.1.7",
+  "version": "2.2.2",
   "license": "MIT",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -11,7 +11,7 @@
   "scripts": {
     "build": "rm -rf lib  && yarn build:css && yarn copy:twConfig && tsc",
     "watch:css": "npx tailwindcss -i ./src/style.css -o ./lib/style.css --watch",
-    "build:css": "npx tailwindcss -i ./src/style.css -o ./lib/style.css",
+    "build:css": "npx tailwindcss -i ./src/style.css -o ./lib/style.css --minify",
     "copy:twConfig": "cp tailwind.config.js lib/tailwind.config.js",
     "test": "jest"
   },

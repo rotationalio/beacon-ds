@@ -21,6 +21,7 @@ export interface TableProps {
   theadClassName?: string;
   tbodyClassName?: string;
   trClassName?: string;
+  tdClassName?: string;
   thClassName?: string;
   statusClassName?: string;
   actionsClassName?: string;
@@ -35,6 +36,8 @@ function Table({
   tableClassName,
   theadClassName,
   trClassName,
+  thClassName,
+  tdClassName,
   statusClassName,
   actionsClassName,
   isLoading = false,
@@ -82,15 +85,20 @@ function Table({
                   tableClassName
                 )}
               >
-                <thead className={mergeClassnames('bg-white', theadClassName)}>
+                <thead
+                  className={mergeClassnames(
+                    'bg-white font-bold',
+                    theadClassName
+                  )}
+                >
                   {headerGroups.map((headerGroup) => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
                       {headerGroup.headers.map((column) => (
                         <th
                           scope="col"
                           className={mergeClassnames(
-                            'group px-6 py-3 text-left text-[12px] font-medium text-gray-500 capitalize tracking-wider border-x-[1.5] border-gray-400/40',
-                            trClassName
+                            'group px-6 py-3 text-left text-[12px] font-bold  capitalize tracking-wider border-x-[1.5] border-gray-400/40',
+                            thClassName
                           )}
                           {...column.getHeaderProps(
                             column.getSortByToggleProps()
@@ -144,7 +152,10 @@ function Table({
                           {...row.getRowProps()}
                           onClick={() => onRowClick && onRowClick(row)}
                           {...(onRowClick && {
-                            className: 'cursor-pointer hover:bg-gray-100',
+                            className: mergeClassnames(
+                              'cursor-pointer hover:bg-gray-100',
+                              trClassName
+                            ),
                           })}
                         >
                           {!isLoading &&
@@ -153,7 +164,10 @@ function Table({
                               return (
                                 <td
                                   {...cell.getCellProps()}
-                                  className="px-6 py-4 whitespace-nowrap"
+                                  className={mergeClassnames(
+                                    'px-6 py-4 whitespace-nowrap text-[12px]',
+                                    tdClassName
+                                  )}
                                   role="cell"
                                 >
                                   {{
