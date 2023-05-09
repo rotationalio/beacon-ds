@@ -75,7 +75,7 @@ Default.args = {
       ],
     },
   ],
-  onRowClick: (params) => {
+  onRowClick: (params: any) => {
     console.log('clicked!', params);
   },
 };
