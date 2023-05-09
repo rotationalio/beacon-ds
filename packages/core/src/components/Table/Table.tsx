@@ -16,6 +16,7 @@ import { ActionPill } from './shared/ActionPill';
 export interface TableProps {
   columns: Column[];
   data: any;
+  initialState?: any;
   className?: string;
   tableClassName?: string;
   theadClassName?: string;
@@ -37,6 +38,7 @@ function Table({
   theadClassName,
   trClassName,
   thClassName,
+  initialState,
   tdClassName,
   statusClassName,
   actionsClassName,
@@ -52,6 +54,7 @@ function Table({
   } = useTable(
     {
       columns,
+      initialState,
       data,
     },
     useFilters, // useFilters!

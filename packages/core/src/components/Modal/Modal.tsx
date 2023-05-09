@@ -2,6 +2,7 @@ import React from 'react';
 import { Backdrop, Container, StyledModal, Title } from './Modal.styles';
 import { twMerge } from 'tailwind-merge';
 import { ModalProps } from './Modal.types';
+import { mergeClassnames } from '../../utils';
 import { Button } from '../Button';
 import CloseIcon from './CloseIcon';
 function Modal(props: ModalProps, ref: React.ForwardedRef<HTMLDivElement>) {
@@ -10,6 +11,7 @@ function Modal(props: ModalProps, ref: React.ForwardedRef<HTMLDivElement>) {
     children,
     title,
     containerClassName,
+    modalCloseBtnClassName,
     fullScreen,
     size = 'small',
     titleProps,
@@ -26,7 +28,13 @@ function Modal(props: ModalProps, ref: React.ForwardedRef<HTMLDivElement>) {
         {onClose && (
           <Button
             variant="ghost"
-            className="absolute top-0 -right-10 p-2 border-none bg-transparent"
+            size="custom"
+            className={
+              mergeClassnames(
+                'absolute top-0 right-4 m-4 border-none w-4 ',
+                modalCloseBtnClassName
+              ) as string
+            }
           >
             <CloseIcon onClick={onClose} />
           </Button>

@@ -5,6 +5,7 @@ export type ModalProps = {
   title?: React.ReactNode;
   containerClassName?: string;
   fullScreen?: boolean;
+  modalCloseBtnClassName?: string;
   size?: TSize;
   onClose?: () => void;
   titleProps?: React.DetailedHTMLProps<
