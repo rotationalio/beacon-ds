@@ -31,7 +31,7 @@ function Modal(props: ModalProps, ref: React.ForwardedRef<HTMLDivElement>) {
             size="custom"
             className={
               mergeClassnames(
-                'absolute top-0 right-4 m-4 border-none w-4 ',
+                'absolute top-0 right-4 m-4 border-none w-4 bg-transparent py-0 h-4',
                 modalCloseBtnClassName
               ) as string
             }

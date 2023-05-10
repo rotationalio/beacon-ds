@@ -71,7 +71,14 @@ export function ThreeDotIcon({ className }: IconProps) {
 
 export function HThreeDotIcon({ className }: IconProps) {
   return (
-    <svg className={className} viewBox="0 0 24 24">
+    <svg
+      className={className}
+      stroke="currentColor"
+      fill="currentColor"
+      height={16}
+      width={16}
+      viewBox="0 0 24 24"
+    >
       <circle cx="5" cy="12" r="2"></circle>
       <circle cx="12" cy="12" r="2"></circle>
       <circle cx="19" cy="12" r="2"></circle>
