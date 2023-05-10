@@ -32,7 +32,7 @@ export function ActionPill({ actions, className }: ActionPillProps) {
         size="custom"
         className="border-none focus:outline-none focus:ring-0 focus:ring-offset-0 focus:border-none h-[16px] w-[16px] p-0"
       >
-        <HThreeDotIcon className="w-[16px] h-[16px]" />
+        <HThreeDotIcon />
       </Button>
       {actions.length > 0 && (
         <>

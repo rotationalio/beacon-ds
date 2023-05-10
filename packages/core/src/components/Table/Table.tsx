@@ -154,12 +154,10 @@ function Table({
                         <tr
                           {...row.getRowProps()}
                           onClick={() => onRowClick && onRowClick(row)}
-                          {...(onRowClick && {
-                            className: mergeClassnames(
-                              'cursor-pointer hover:bg-gray-100',
-                              trClassName
-                            ),
-                          })}
+                          className={mergeClassnames(
+                            onRowClick && 'cursor-pointer hover:bg-gray-100',
+                            trClassName
+                          )}
                         >
                           {!isLoading &&
                             row.cells.length > 0 &&
