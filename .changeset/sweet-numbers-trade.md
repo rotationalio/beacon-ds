@@ -3,4 +3,4 @@
 '@rotational/beacon-core': major
 ---
 
-publish fondation
+publish foundation
