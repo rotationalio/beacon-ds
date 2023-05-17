@@ -2,4 +2,4 @@
 '@rotational/beacon-core': patch
 ---
 
-fix data set attribut
+fix data set attribute
