@@ -13,12 +13,6 @@ import mergeClassnames from '../../utils/mergeClassnames';
 import { StatusPill } from './shared/StatusPill';
 import { ActionPill } from './shared/ActionPill';
 import { PaginateButton } from './shared/PaginateButton';
-import {
-  ChevronDoubleLeftIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  ChevronDoubleRightIcon,
-} from '@heroicons/react/24/solid';
 export interface TableProps {
   columns: Column[];
   data: any;
@@ -33,6 +27,7 @@ export interface TableProps {
   statusClassName?: string;
   actionsClassName?: string;
   isLoading?: boolean;
+  showPaginationAfter?: number;
   [key: string]: any;
   onRowClick?: (params: Row) => void;
 }
@@ -47,6 +42,7 @@ function Table({
   thClassName,
   initialState,
   tdClassName,
+  showPaginationAfter = 10,
   statusClassName,
   actionsClassName,
   isLoading = false,
@@ -62,8 +58,7 @@ function Table({
     canPreviousPage,
     canNextPage,
     pageOptions,
-    pageCount,
-    gotoPage,
+
     nextPage,
     previousPage,
     setPageSize,
@@ -71,7 +66,7 @@ function Table({
   } = useTable(
     {
       columns,
-      initialState: { pageIndex: 0, pageSize: 10 },
+      initialState: { pageIndex: 0, pageSize: 10, ...initialState },
       data,
     },
     useFilters, // useFilters!
@@ -229,22 +224,8 @@ function Table({
                 </tbody>
               </table>
               {/* display pagination only when data is up to pagesize value */}
-              {data.length > pageSize && (
+              {data.length > showPaginationAfter && (
                 <div className="py-3 flex items-center justify-between">
-                  <div className="flex-1 flex justify-between sm:hidden">
-                    <PaginateButton
-                      onClick={() => previousPage()}
-                      disabled={!canPreviousPage}
-                    >
-                      Previous
-                    </PaginateButton>
-                    <PaginateButton
-                      onClick={() => nextPage()}
-                      disabled={!canNextPage}
-                    >
-                      Next
-                    </PaginateButton>
-                  </div>
                   <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
                     <div className="flex gap-x-2 items-baseline">
                       <span className="text-sm text-gray-700">
@@ -271,55 +252,21 @@ function Table({
                         </select>
                       </label>
                     </div>
-                    <div>
-                      <nav
-                        className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
-                        aria-label="Pagination"
-                      >
-                        <PaginateButton
-                          className="rounded-l-md"
-                          onClick={() => gotoPage(0)}
-                          disabled={!canPreviousPage}
-                        >
-                          <span className="sr-only">First</span>
-                          <ChevronDoubleLeftIcon
-                            className="h-5 w-5 text-gray-600 hover:text-gray-900"
-                            aria-hidden="true"
-                          />
-                        </PaginateButton>
-                        <PaginateButton
-                          onClick={() => previousPage()}
-                          disabled={!canPreviousPage}
-                        >
-                          <span className="sr-only">Previous</span>
-                          <ChevronLeftIcon
-                            className="h-5 w-5 text-gray-600 hover:text-gray-900"
-                            aria-hidden="true"
-                          />
-                        </PaginateButton>
-                        <PaginateButton
-                          onClick={() => nextPage()}
-                          disabled={!canNextPage}
-                        >
-                          <span className="sr-only">Next</span>
-                          <ChevronRightIcon
-                            className="h-5 w-5 text-gray-600 hover:text-gray-900"
-                            aria-hidden="true"
-                          />
-                        </PaginateButton>
-                        <PaginateButton
-                          className="rounded-r-md"
-                          onClick={() => gotoPage(pageCount - 1)}
-                          disabled={!canNextPage}
-                        >
-                          <span className="sr-only">Last</span>
-                          <ChevronDoubleRightIcon
-                            className="h-5 w-5 text-gray-600 hover:text-gray-900"
-                            aria-hidden="true"
-                          />
-                        </PaginateButton>
-                      </nav>
-                    </div>
+                  </div>
+
+                  <div className="flex justify-between sm:hidden">
+                    <PaginateButton
+                      onClick={() => previousPage()}
+                      disabled={!canPreviousPage}
+                    >
+                      Previous
+                    </PaginateButton>
+                    <PaginateButton
+                      onClick={() => nextPage()}
+                      disabled={!canNextPage}
+                    >
+                      Next
+                    </PaginateButton>
                   </div>
                 </div>
               )}
