@@ -77,6 +77,9 @@ const getVariantStyles = (variant: BtnProps['variant'] = 'primary') => {
     ghost: css``,
     tertiary: css`
     background-color: ${tertiaryColor};
+    :hover {
+      background-color: ${() => lighten(0.2)(getVariantColor(variant))};
+    }
     `,
   }[variant];
 };
