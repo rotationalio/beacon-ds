@@ -2,4 +2,4 @@
 '@rotational/beacon-core': patch
 ---
 
-added disabled attribut to textfield component
+added disabled attribute to textfield component
