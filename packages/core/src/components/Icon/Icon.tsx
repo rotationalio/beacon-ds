@@ -8,9 +8,12 @@ import {
   WarningIcon,
   InfoIcon,
   HThreeDotIcon,
+  ChevronDownIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
 } from './Icons';
 
-const Icon = () => {};
+const Icon = {} as any;
 
 Icon.Sort = SortIcon;
 Icon.SortUp = SortUpIcon;
@@ -21,6 +24,9 @@ Icon.Error = ErrorIcon;
 Icon.Warning = WarningIcon;
 Icon.Info = InfoIcon;
 Icon.HThreeDot = HThreeDotIcon;
+Icon.ChevronDown = ChevronDownIcon;
+Icon.ChevronLeft = ChevronLeftIcon;
+Icon.ChevronRight = ChevronRightIcon;
 
 Icon.displayName = 'Icon';
 

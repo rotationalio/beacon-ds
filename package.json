@@ -19,6 +19,8 @@
     "build:release": "yarn build && yarn forallpackages exec rm -rf _release && yarn forallpackages pack && yarn forallpackages exec \"mkdir _release && tar zxvf package.tgz --directory _release && rm package.tgz\"",
     "forallpackages": "yarn workspaces foreach --no-private --verbose",
     "release": "yarn build:release && changeset publish",
+    "unpublish:all": "yarn forallpackages exec npm unpublish --force",
+    "unpublish:latest": "yarn forallpackages exec npm unpublish --force --tag latest",
     "build:storybook": "yarn build && yarn storybook",
     "storybook:build": "yarn workspace @rotational/beacon-storybook build-storybook"
   },
