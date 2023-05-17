@@ -218,3 +218,101 @@ export const XIcon = ({ className }: IconProps) => (
     <line x1="6" y1="6" x2="18" y2="18"></line>
   </svg>
 );
+
+export const ChevronDownIcon = ({ className }: IconProps) => (
+  <svg
+    className={className}
+    stroke="currentColor"
+    fill="currentColor"
+    strokeWidth="0"
+    viewBox="0 0 320 512"
+    height="1em"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="currentColor"
+      d="M10.5 192.5L160 342l149.5-149.5c4.7-4.7 12.3-4.7 17 0l35.3 35.3c4.7 4.7 4.7 12.3 0 17L176 434.3c-4.7 4.7-12.3 4.7-17 0L10.5 209.5c-4.7-4.7-4.7-12.3 0-17z"
+    ></path>
+  </svg>
+);
+
+export const ChevronRightIcon = ({ className }: IconProps) => (
+  <svg
+    className={className}
+    stroke="currentColor"
+    fill="currentColor"
+    strokeWidth="0"
+    viewBox="0 0 320 512"
+    height="1em"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="currentColor"
+      d="M10.5 192.5L160 342l149.5-149.5c4.7-4.7 12.3-4.7 17 0l35.3 35.3c4.7 4.7 4.7 12.3 0 17L176 434.3c-4.7 4.7-12.3 4.7-17 0L10.5 209.5c-4.7-4.7-4.7-12.3 0-17z"
+    ></path>
+  </svg>
+);
+
+export const ChevronLeftIcon = ({ className }: IconProps) => (
+  <svg
+    className={className}
+    stroke="currentColor"
+    fill="currentColor"
+    strokeWidth="0"
+    viewBox="0 0 320 512"
+    height="1em"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="currentColor"
+      d="M309.5 209.5L160 59l-149.5 149.5c-4.7 4.7-12.3 4.7-17 0L58.2 174.2c-4.7-4.7-4.7-12.3 0-17L176 77.7c4.7-4.7 12.3-4.7 17 0L309.5 192.5c4.7 4.7 4.7 12.3 0 17z"
+    ></path>
+  </svg>
+);
+
+export const ChevronDoubleRightIcon = ({ className }: IconProps) => (
+  <svg
+    className={className}
+    stroke="currentColor"
+    fill="currentColor"
+    strokeWidth="0"
+    viewBox="0 0 448 512"
+    height="1em"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="currentColor"
+      d="M10.5 192.5L160 342l149.5-149.5c4.7-4.7 12.3-4.7 17 0l35.3 35.3c4.7 4.7 4.7 12.3 0 17L176 434.3c-4.7 4.7-12.3 4.7-17 0L10.5 209.5c-4.7-4.7-4.7-12.3 0-17z"
+    ></path>
+    <path
+      fill="currentColor"
+      d="M224.5 192.5L374 342l149.5-149.5c4.7-4.7 12.3-4.7 17 0l35.3 35.3c4.7 4.7 4.7 12.3 0 17L390 434.3c-4.7 4.7-12.3 4.7-17 0L224.5 209.5c-4.7-4.7-4.7-12.3 0-17z"
+    ></path>
+  </svg>
+);
+
+export const ChevronDoubleLeftIcon = ({ className }: IconProps) => (
+  <svg
+    className={className}
+    stroke="currentColor"
+    fill="currentColor"
+    strokeWidth="0"
+    viewBox="0 0 448 512"
+    height="1em"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="currentColor"
+      d="M224.5 209.5L374 59l149.5 149.5c4.7 4.7 4.7 12.3 0 17L390 337.8c-4.7 4.7-12.3 4.7-17 0L224.5 222.5c-4.7-4.7-4.7-12.3 0-17z"
+    ></path>
+    <path
+      fill="currentColor"
+      d="M10.5 209.5L160 59l149.5 149.5c4.7 4.7 4.7 12.3 0 17L176 337.8c-4.7 4.7-12.3 4.7-17 0L10.5 222.5c-4.7-4.7-4.7-12.3 0-17z"
+    ></path>
+  </svg>
+);

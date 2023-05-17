@@ -19,7 +19,6 @@ export const Default = Template.bind({});
 Default.args = {
   label: 'Email',
   description: 'Enter an email for us to contact you about your order.',
-  errorMessage: 'error message',
   pattern: '',
   placeholder: 'Enter your email',
   isDisabled: false,
@@ -28,4 +27,11 @@ Default.args = {
   size: 'medium',
   isRequired: false,
   isReadOnly: false,
+};
+
+export const DisabledInput = Template.bind({});
+
+DisabledInput.args = {
+  ...Default.args,
+  isDisabled: true,
 };

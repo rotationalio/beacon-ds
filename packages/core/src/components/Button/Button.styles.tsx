@@ -11,14 +11,6 @@ export const StyledButton = styled.button<BtnProps>`
   background-color: inherit;
   transition: background-color 200ms ease;
   border-radius: 5px;
-  :focus {
-    outline: none;
-  }
-
-  :hover {
-    background-color: ${(props) =>
-      lighten(0.2)(getVariantColor(props.variant))};
-  }
 
   /* variants */
   ${(props) => getVariantStyles(props.variant)}
@@ -69,9 +61,15 @@ const getVariantStyles = (variant: BtnProps['variant'] = 'primary') => {
   return {
     primary: css`
       background-color: ${primaryColor};
+      :hover {
+        background-color: ${() => lighten(0.2)(getVariantColor(variant))};
+      }
     `,
     secondary: css`
       background-color: ${secondaryColor};
+      :hover {
+        background-color: ${() => lighten(0.2)(getVariantColor(variant))};
+      }
     `,
     ghost: css``,
   }[variant];

@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { Label } from '../Label';
 import { Input } from './Input.styles';
-import { getTextFieldInputStyle } from './util';
+import { setSizeVariantStyle } from './util';
 
 export type TextFieldProps = {
   className?: string;
@@ -17,6 +17,7 @@ export type TextFieldProps = {
   errorMessageClassName?: string;
   labelClassName?: string;
   descriptionClassName?: string;
+  disabled?: boolean;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 } & AriaTextFieldOptions<'input'>;
 
@@ -48,10 +49,18 @@ function TextField(props: Partial<TextFieldProps>) {
         {label}
       </Label>
       <Input
-        className={getTextFieldInputStyle({ className, size })}
+        className={
+          mergeClassnames(
+            setSizeVariantStyle(size),
+            (props.isDisabled || props.disabled) &&
+              'bg-neutral-100 text-neutral-600 border-neutral-200 cursor-not-allowed',
+            className
+          ) as string
+        }
         {...inputProps}
         onChange={onChange}
         aria-invalid={!!props.errorMessage}
+        disabled={props.isDisabled || props.disabled}
         ref={ref}
       />
 
