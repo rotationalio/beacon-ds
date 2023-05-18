@@ -228,22 +228,14 @@ function Table({
         </div>
         {/* display pagination only when data is up to pagesize value */}
         {data.length > showPaginationAfter && (
-          <div className="py-3 px-5 flex items-center justify-between">
-            <div className="flex">
-              <PaginateButton
-                onClick={() => previousPage()}
-                disabled={!canPreviousPage}
-              >
-                Previous
-              </PaginateButton>
+          <div className="py-3 px-auto flex items-center justify-between">
+            <PaginateButton
+              onClick={() => previousPage()}
+              disabled={!canPreviousPage}
+            >
+              Previous
+            </PaginateButton>
 
-              <PaginateButton
-                onClick={() => nextPage()}
-                disabled={!canNextPage}
-              >
-                Next
-              </PaginateButton>
-            </div>
             <div className="flex items-center justify-between">
               <div className="flex gap-x-2 items-baseline">
                 <span className="text-sm text-gray-700">
@@ -268,6 +260,9 @@ function Table({
                 </label>
               </div>
             </div>
+            <PaginateButton onClick={() => nextPage()} disabled={!canNextPage}>
+              Next
+            </PaginateButton>
           </div>
         )}
       </div>
