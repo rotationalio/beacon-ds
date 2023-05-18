@@ -16,7 +16,7 @@ export const PaginateButton = ({
   return (
     <Button
       className={mergeClassnames(
-        'flex items-center justify-center w-24 h-8 mx-2 hover:bg-gray-500 focus:bg-gray-500 hover:border-color-black-500 focus:border-color-black-500 text-gray-600 hover:text-gray-800 disabled:bg-gray-500',
+        'flex items-center justify-center w-24 h-8 mx-2',
         className
       )}
       onClick={onClick}

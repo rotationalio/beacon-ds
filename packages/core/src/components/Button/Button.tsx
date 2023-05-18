@@ -40,7 +40,7 @@ const Button = forwardRef<HTMLButtonElement, BtnProps>((props, ref) => {
       className={mergeClassnames(
         'line-height-1.75 cursor-pointer text-white font-size-14 px-4 py-2 min-h-[28px] bg-inherit transition-colors duration-200 ease-in-out rounded-5 focus:outline-none text-[14px] font-bold ',
         variant === 'ghost' &&
-          'text-black border-gray-500 border-2 h-10 w-20 rounded-5',
+          'text-gray-600 border-gray-400 border h-10 w-20 rounded-5 hover:bg-gray-300  hover:border-gray-300 disabled:hover:bg-gray-300 disabled:bg-gray-300 disabled:text-gray-400 disabled:border-gray-300',
         className
       )}
       {...rest}

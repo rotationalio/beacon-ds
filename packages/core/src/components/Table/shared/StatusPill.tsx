@@ -1,5 +1,6 @@
 import mergeClassnames from '../../../utils/mergeClassnames';
 import { STATUS } from './util';
+import { StatusColorIcon } from '../../Icon/Icons';
 interface StatusPillProps {
   value: any;
   className?: string;
@@ -7,19 +8,38 @@ interface StatusPillProps {
 export function StatusPill({ value, className }: StatusPillProps) {
   const status = value ? value.toLowerCase() : 'unknown';
 
+  const statusColorMap = {
+    [STATUS.ACTIVE]: 'text-green-800',
+    [STATUS.CONFIRMED]: 'text-green-800',
+    [STATUS.COMPLETE]: 'text-green-800',
+    [STATUS.PENDING]: 'text-warning-600',
+    [STATUS.INCOMPLETE]: 'text-warning-600',
+    [STATUS.INACTIVE]: 'text-warning-600',
+    [STATUS.REVOKED]: 'text-primary-500',
+    [STATUS.ERROR]: 'text-danger-600',
+    [STATUS.UNUSED]: 'text-gray-600',
+  } as any;
+
+  const statusIconMap = {
+    [STATUS.ACTIVE]: <StatusColorIcon fill="#34753E" />,
+    [STATUS.COMPLETE]: <StatusColorIcon fill="#34753E" />,
+    [STATUS.CONFIRMED]: <StatusColorIcon fill="#34753E" />,
+    [STATUS.INACTIVE]: <StatusColorIcon fill="#C97900" />,
+    [STATUS.PENDING]: <StatusColorIcon fill="#C97900" />,
+    [STATUS.INCOMPLETE]: <StatusColorIcon fill="#C97900" />,
+    [STATUS.REVOKED]: <StatusColorIcon fill="#F26800" />,
+    [STATUS.ERROR]: <StatusColorIcon fill="#EB2A00" />,
+    [STATUS.UNUSED]: <StatusColorIcon fill="#6C757D" />,
+  } as any;
+
   return (
-    <span
-      className={mergeClassnames(
-        'px-3 py-1 capitalize leading-wide font-bold text-[12px] rounded-full shadow-sm',
-        status.startsWith(STATUS.ACTIVE) ? 'bg-green text-white' : null,
-        status.startsWith(STATUS.INACTIVE)
-          ? 'bg-yellow-100 text-yellow-800'
-          : null,
-        status.startsWith(STATUS.ERROR) ? 'bg-red-100 text-red-800' : null,
-        className
-      )}
-    >
-      {status}
-    </span>
+    <div className={mergeClassnames('flex items-center', className)}>
+      {statusIconMap[status]}
+      <span
+        className={mergeClassnames('ml-1', statusColorMap[status] as string)}
+      >
+        {value}
+      </span>
+    </div>
   );
 }

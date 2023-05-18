@@ -9,7 +9,6 @@ const tertiaryColor = '#6DD19C';
 
 export const StyledButton = styled.button<BtnProps>`
   /* base */
-  background-color: inherit;
   transition: background-color 200ms ease;
   border-radius: 5px;
 

@@ -223,56 +223,53 @@ function Table({
                   )}
                 </tbody>
               </table>
-              {/* display pagination only when data is up to pagesize value */}
-              {data.length > showPaginationAfter && (
-                <div className="py-3 flex items-center justify-between">
-                  <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
-                    <div className="flex gap-x-2 items-baseline">
-                      <span className="text-sm text-gray-700">
-                        Page{' '}
-                        <span className="font-medium">{pageIndex + 1}</span> of{' '}
-                        <span className="font-medium">
-                          {pageOptions.length}
-                        </span>
-                      </span>
-                      <label>
-                        <span className="sr-only">Items Per Page</span>
-                        <select
-                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                          value={pageSize}
-                          onChange={(e) => {
-                            setPageSize(Number(e.target.value));
-                          }}
-                        >
-                          {[5, 10, 20].map((pageSize) => (
-                            <option key={pageSize} value={pageSize}>
-                              Show {pageSize}
-                            </option>
-                          ))}
-                        </select>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div className="flex justify-between sm:hidden">
-                    <PaginateButton
-                      onClick={() => previousPage()}
-                      disabled={!canPreviousPage}
-                    >
-                      Previous
-                    </PaginateButton>
-                    <PaginateButton
-                      onClick={() => nextPage()}
-                      disabled={!canNextPage}
-                    >
-                      Next
-                    </PaginateButton>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </div>
+        {/* display pagination only when data is up to pagesize value */}
+        {data.length > showPaginationAfter && (
+          <div className="py-3 px-5 flex items-center justify-between">
+            <div className="flex">
+              <PaginateButton
+                onClick={() => previousPage()}
+                disabled={!canPreviousPage}
+              >
+                Previous
+              </PaginateButton>
+
+              <PaginateButton
+                onClick={() => nextPage()}
+                disabled={!canNextPage}
+              >
+                Next
+              </PaginateButton>
+            </div>
+            <div className="flex items-center justify-between">
+              <div className="flex gap-x-2 items-baseline">
+                <span className="text-sm text-gray-700">
+                  Page <span className="font-medium">{pageIndex + 1}</span> of{' '}
+                  <span className="font-medium">{pageOptions.length}</span>
+                </span>
+                <label>
+                  <span className="sr-only">Items Per Page</span>
+                  <select
+                    className="mt-1 block w-full rounded-md  shadow-sm focus:ring focus:ring-opacity-50 text-[12px] leading-[18px] font-medium text-gray-700 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300"
+                    value={pageSize}
+                    onChange={(e) => {
+                      setPageSize(Number(e.target.value));
+                    }}
+                  >
+                    {[5, 10, 20].map((pageSize) => (
+                      <option key={pageSize} value={pageSize}>
+                        Show {pageSize}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
