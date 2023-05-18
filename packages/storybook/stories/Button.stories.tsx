@@ -9,7 +9,7 @@ export default {
     variant: {
       control: {
         type: 'select',
-        options: ['primary', 'secondary', 'ghost'],
+        options: ['primary', 'secondary', 'ghost', 'tertiary'],
       },
     },
     size: {
@@ -66,6 +66,12 @@ Ghost.args = {
   ...Default.args,
   className: 'text-black border-gray-500 border-2 h-10 w-20 rounded-5',
   variant: 'ghost',
+};
+
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+  ...Default.args,
+  variant: 'tertiary',
 };
 
 export const onClickButton = Template.bind({});

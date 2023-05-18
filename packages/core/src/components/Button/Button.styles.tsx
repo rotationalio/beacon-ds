@@ -5,6 +5,7 @@ import { lighten } from 'polished';
 const primaryColor = '#1D65A6';
 const secondaryColor = '#E66809';
 const grayColor = '#DEE2E6';
+const tertiaryColor = '#6DD19C';
 
 export const StyledButton = styled.button<BtnProps>`
   /* base */
@@ -27,6 +28,8 @@ const getVariantColor = (variant: BtnProps['variant'] = 'primary') => {
     primary: primaryColor,
     secondary: secondaryColor,
     ghost: grayColor,
+    tertiary: tertiaryColor,
+
   };
   return colorVarsMap[variant];
 };
@@ -71,6 +74,12 @@ const getVariantStyles = (variant: BtnProps['variant'] = 'primary') => {
       }
     `,
     ghost: css``,
+    tertiary: css`
+    background-color: ${tertiaryColor};
+    :hover {
+      background-color: ${() => lighten(0.2)(getVariantColor(variant))};
+    }
+    `,
   }[variant];
 };
 

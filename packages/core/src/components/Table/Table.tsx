@@ -120,7 +120,7 @@ function Table({
                             column.getSortByToggleProps()
                           )}
                         >
-                          <div className="flex items-center justify-between">
+                          <div className="flex items-center justify-between text-[12px]">
                             {column.render('Header')}
                             {/* Add a sort direction indicator */}
                             <span>
