@@ -1,5 +1,6 @@
 import mergeClassnames from '../../../utils/mergeClassnames';
-import { STATUS } from './util';
+import { STATUS, capitalize } from './util';
+import { StatusColorIcon } from '../../Icon/Icons';
 interface StatusPillProps {
   value: any;
   className?: string;
@@ -7,19 +8,32 @@ interface StatusPillProps {
 export function StatusPill({ value, className }: StatusPillProps) {
   const status = value ? value.toLowerCase() : 'unknown';
 
+  const statusColorMap = {
+    [STATUS.ACTIVE || STATUS.CONFIRMED || STATUS.COMPLETE]: 'text-green-800',
+    [STATUS.INACTIVE || STATUS.INCOMPLETE]: 'text-warning-300',
+    [STATUS.REVOKED]: 'text-warning-600',
+    [STATUS.ERROR]: 'text-danger-600',
+    [STATUS.UNUSED]: 'text-gray-600',
+  } as any;
+
+  const statusIconMap = {
+    [STATUS.ACTIVE || STATUS.CONFIRMED || STATUS.COMPLETE]: (
+      <StatusColorIcon fill="#34753E" />
+    ),
+    [STATUS.INACTIVE || STATUS.INCOMPLETE]: <StatusColorIcon fill="#FFCC75" />,
+    [STATUS.REVOKED]: <StatusColorIcon fill="#CC7C00" />,
+    [STATUS.ERROR]: <StatusColorIcon fill="#EB2A00" />,
+    [STATUS.UNUSED]: <StatusColorIcon fill="#6C757D" />,
+  } as any;
+
   return (
-    <span
-      className={mergeClassnames(
-        'px-3 py-1 capitalize leading-wide font-bold text-[12px] rounded-full shadow-sm',
-        status.startsWith(STATUS.ACTIVE) ? 'bg-green text-white' : null,
-        status.startsWith(STATUS.INACTIVE)
-          ? 'bg-yellow-100 text-yellow-800'
-          : null,
-        status.startsWith(STATUS.ERROR) ? 'bg-red-100 text-red-800' : null,
-        className
-      )}
-    >
-      {status}
-    </span>
+    <div className={mergeClassnames('flex items-center', className)}>
+      {statusIconMap[status]}
+      <span
+        className={mergeClassnames('ml-1', statusColorMap[status] as string)}
+      >
+        {capitalize(status)}
+      </span>
+    </div>
   );
 }

@@ -225,8 +225,14 @@ function Table({
               </table>
               {/* display pagination only when data is up to pagesize value */}
               {data.length > showPaginationAfter && (
-                <div className="py-3 flex items-center justify-between">
-                  <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                <div className="py-3 px-5 sm:px-8 flex items-center justify-between">
+                  <PaginateButton
+                    onClick={() => previousPage()}
+                    disabled={!canPreviousPage}
+                  >
+                    Previous
+                  </PaginateButton>
+                  <div className="items-center justify-between">
                     <div className="flex gap-x-2 items-baseline">
                       <span className="text-sm text-gray-700">
                         Page{' '}
@@ -254,20 +260,12 @@ function Table({
                     </div>
                   </div>
 
-                  <div className="flex justify-between sm:hidden">
-                    <PaginateButton
-                      onClick={() => previousPage()}
-                      disabled={!canPreviousPage}
-                    >
-                      Previous
-                    </PaginateButton>
-                    <PaginateButton
-                      onClick={() => nextPage()}
-                      disabled={!canNextPage}
-                    >
-                      Next
-                    </PaginateButton>
-                  </div>
+                  <PaginateButton
+                    onClick={() => nextPage()}
+                    disabled={!canNextPage}
+                  >
+                    Next
+                  </PaginateButton>
                 </div>
               )}
             </div>
