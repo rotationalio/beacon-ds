@@ -1,5 +1,5 @@
 import mergeClassnames from '../../../utils/mergeClassnames';
-import { STATUS } from './util';
+import { STATUS, capitalize } from './util';
 import { StatusColorIcon } from '../../Icon/Icons';
 interface StatusPillProps {
   value: any;
@@ -38,7 +38,7 @@ export function StatusPill({ value, className }: StatusPillProps) {
       <span
         className={mergeClassnames('ml-1', statusColorMap[status] as string)}
       >
-        {value}
+        {capitalize(value)}
       </span>
     </div>
   );
