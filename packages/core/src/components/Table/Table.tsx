@@ -150,7 +150,7 @@ function Table({
                         colSpan={columns.length}
                         className="px-auto py-4 whitespace-nowrap text-center h-[100px] items-center"
                       >
-                        <div className="flex flex-col text-center justify-center">
+                        <div className="flex flex-col text-center justify-center items-center">
                           <Loader size="md" />
                         </div>
                         <p className="mt-2 text-sm text-gray-500">

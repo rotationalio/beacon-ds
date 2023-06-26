@@ -1,4 +1,4 @@
-import '@rotational/beacon-core/lib/style.css';
+import '../../core/lib/tailwind.css';
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   // layout: 'centered',
