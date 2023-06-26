@@ -29,7 +29,6 @@ const getVariantColor = (variant: BtnProps['variant'] = 'primary') => {
     secondary: secondaryColor,
     ghost: grayColor,
     tertiary: tertiaryColor,
-
   };
   return colorVarsMap[variant];
 };
@@ -73,12 +72,12 @@ const getVariantStyles = (variant: BtnProps['variant'] = 'primary') => {
         background-color: ${() => lighten(0.2)(getVariantColor(variant))};
       }
     `,
-    ghost: css``,
+    ghost: '',
     tertiary: css`
-    background-color: ${tertiaryColor};
-    :hover {
-      background-color: ${() => lighten(0.2)(getVariantColor(variant))};
-    }
+      background-color: ${tertiaryColor};
+      :hover {
+        background-color: ${() => lighten(0.2)(getVariantColor(variant))};
+      }
     `,
   }[variant];
 };
