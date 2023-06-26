@@ -5,7 +5,7 @@ import { lighten } from 'polished';
 const primaryColor = '#1D65A6';
 const secondaryColor = '#E66809';
 const grayColor = '#DEE2E6';
-const tertiaryColor = '#6DD19C';
+const tertiaryColor = '#238553';
 
 export const StyledButton = styled.button<BtnProps>`
   /* base */
