@@ -38,7 +38,7 @@ export const Backdrop = styled(BackdropUnstyled)`
 
 export const Container = styled.div<ModalContainerProps>(
   ({ fullScreen, size }) => ({
-    minWidth: 500,
+    minWidth: 300,
     borderRadius: '1rem',
     background: '#fff',
     padding: '1rem 2rem',
