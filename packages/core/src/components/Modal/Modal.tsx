@@ -23,7 +23,7 @@ function Modal(props: ModalProps, ref: React.ForwardedRef<HTMLDivElement>) {
       <Container
         size={size}
         fullScreen={fullScreen}
-        className={twMerge(containerClassName)}
+        className={twMerge('w-[25vw]', containerClassName)}
       >
         {onClose && (
           <Button
