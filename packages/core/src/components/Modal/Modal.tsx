@@ -1,6 +1,5 @@
 import React from 'react';
 import { Backdrop, Container, StyledModal, Title } from './Modal.styles';
-import { twMerge } from 'tailwind-merge';
 import { ModalProps } from './Modal.types';
 import { mergeClassnames } from '../../utils';
 import { Button } from '../Button';
@@ -23,7 +22,10 @@ function Modal(props: ModalProps, ref: React.ForwardedRef<HTMLDivElement>) {
       <Container
         size={size}
         fullScreen={fullScreen}
-        className={twMerge(containerClassName)}
+        className={mergeClassnames(
+          'overflow-scroll w-[25vw] max-w-[80vw] lg:max-w-[50vw] no-scrollbar',
+          containerClassName
+        )}
       >
         {onClose && (
           <Button
