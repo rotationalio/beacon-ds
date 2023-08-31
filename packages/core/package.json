@@ -1,7 +1,7 @@
 {
   "name": "@rotational/beacon-core",
   "packageManager": "yarn@3.4.1",
-  "version": "2.5.9",
+  "version": "2.5.10",
   "license": "MIT",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -16,6 +16,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
     "@heroicons/react": "latest",
     "@radix-ui/react-avatar": "^1.0.1",
     "@radix-ui/react-toast": "^1.1.2",
