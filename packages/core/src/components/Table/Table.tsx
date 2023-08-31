@@ -7,7 +7,7 @@ import {
   Row,
 } from 'react-table';
 
-import { SortIcon, SortUpIcon, SortDownIcon, NoDataIcon } from '../Icon/Icons';
+import { SortIcon, SortUpIcon, SortDownIcon } from '../Icon/Icons';
 import Loader from '../Loader/Loader';
 import mergeClassnames from '../../utils/mergeClassnames';
 import { StatusPill } from './shared/StatusPill';
@@ -211,12 +211,11 @@ function Table({
                           colSpan={columns.length}
                           className="px-auto py-4 whitespace-nowrap text-center h-[100px] items-center"
                         >
-                          <div className="flex text-center justify-center">
-                            <NoDataIcon className="w-16 h-16 text-gray-500" />
+                          <div className="flex flex-col text-center justify-center items-center">
+                            <p className="mt-2 text-sm text-gray-800 font-semibold">
+                              No data available
+                            </p>
                           </div>
-                          <p className="mt-2 text-sm text-gray-500">
-                            No data available
-                          </p>
                         </td>
                       )}
                     </tr>
