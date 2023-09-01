@@ -18,5 +18,6 @@ export type SelectProps<T extends readonly object[], SelectOptionType> = {
   isMulti?: boolean; // this will be to enable multi-select
   optionWidth?: string;
   selectedOption?: string | number;
+  defaultValue?: string | number;
   disabled?: boolean;
 };

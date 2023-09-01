@@ -3,7 +3,7 @@ import { Listbox } from '@headlessui/react';
 
 import { SelectProps, SelectOptionType } from './Select.types';
 
-type selectedOptionType = SelectOptionType | SelectOptionType[] | undefined;
+type selectedOptionType = SelectOptionType | undefined;
 
 const Select: FC<SelectProps<SelectOptionType[], SelectOptionType>> = ({
   options,
@@ -25,6 +25,11 @@ const Select: FC<SelectProps<SelectOptionType[], SelectOptionType>> = ({
     if (onChange) {
       onChange(option);
     }
+    if (isMulti) {
+      // concat the new option to the existing options with , as a separator
+      // take the option value split and add the new string to the array
+      setOption([...option, option.value.split(',')]);
+    }
     setOption(option);
   };
 
@@ -39,6 +44,7 @@ const Select: FC<SelectProps<SelectOptionType[], SelectOptionType>> = ({
       value={option}
       onChange={handleChange}
       {...(isMulti && { multiple: true })}
+      {...props}
     >
       {({ open }) => (
         <>
