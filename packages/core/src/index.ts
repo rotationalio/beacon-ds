@@ -21,3 +21,4 @@ export * from './components/Breadcrumbs';
 export * from './components/RadioGroup';
 export * from './components/Radio';
 export * from './components/Switch';
+export * from './components/Select';
