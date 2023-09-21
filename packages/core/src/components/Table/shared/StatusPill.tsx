@@ -18,6 +18,7 @@ export function StatusPill({ value, className }: StatusPillProps) {
     [STATUS.REVOKED]: 'text-primary-500',
     [STATUS.ERROR]: 'text-danger-600',
     [STATUS.UNUSED]: 'text-gray-600',
+    [STATUS.ONBOARDING]: 'text-warning-600',
   } as any;
 
   const statusIconMap = {
@@ -30,13 +31,17 @@ export function StatusPill({ value, className }: StatusPillProps) {
     [STATUS.REVOKED]: <StatusColorIcon fill="#F26800" />,
     [STATUS.ERROR]: <StatusColorIcon fill="#EB2A00" />,
     [STATUS.UNUSED]: <StatusColorIcon fill="#6C757D" />,
+    [STATUS.ONBOARDING]: <StatusColorIcon fill="#C97900" />,
   } as any;
 
   return (
     <div className={mergeClassnames('flex items-center', className)}>
-      {statusIconMap[status]}
+      {statusIconMap[status] || <StatusColorIcon fill="#6C757D" />}
       <span
-        className={mergeClassnames('ml-1', statusColorMap[status] as string)}
+        className={
+          mergeClassnames('ml-1', statusColorMap[status] as string) ||
+          'text-gray-600'
+        }
       >
         {value}
       </span>
