@@ -1,6 +1,6 @@
 <p align="center">
 <a href=https://github.com/rotationalio/beacon-ds target="_blank">
-<img src='https://github.com/rotationalio/beacon-ds/apps/docs/public/placeholder.png' width="100%" alt="Banner" />
+<img src='/apps/docs/public/placeholder.png' width="100%" alt="Banner" />
 </a>
 </p>
 
