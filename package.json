@@ -59,7 +59,7 @@
     "url": "git+https://github.com/rotationalio/beacon-ds.git"
   },
   "author": "Rotational Labs",
-  "license": "ISC",
+  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/rotationalio/beacon-ds/issues"
   },
