@@ -31,7 +31,7 @@ export function StatusPill({ value, className }: StatusPillProps) {
     [STATUS.REVOKED]: <StatusColorIcon fill="#F26800" />,
     [STATUS.ERROR]: <StatusColorIcon fill="#EB2A00" />,
     [STATUS.UNUSED]: <StatusColorIcon fill="#6C757D" />,
-    [STATUS.ONBOARDING]: <StatusColorIcon fill="#8C39FF" />,
+    [STATUS.ONBOARDING]: <StatusColorIcon fill="#984FFF" />,
   } as any;
 
   return (
