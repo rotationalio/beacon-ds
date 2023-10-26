@@ -289,6 +289,48 @@
       }
     },
 
+    "purple": {
+
+      "100": {
+        "value": "#F2E9FF"
+      },
+      "200": {
+        "value": "#E6D3FF"
+      },
+      "300": {
+        "value": "#D9BDFF"
+      },
+      "400": {
+        "value": "#CCA7FF"
+      },
+      "500": {
+        "value": "#BF91FF"
+      },
+      "600": {
+        "value": "#B27BFF"
+      },
+      "700": {
+        "value": "#A565FF"
+      },
+      "800": {
+        "value": "#984FFF"
+      },
+      "900": {
+        "value": "#8C39FF"
+      },
+
+      "light": {
+        "value": "#D9BDFF"
+      },
+      "dark": {
+        "value": "#984FFF"
+      },
+      "DEFAULT": {
+        "value": "#984FFF"
+      }
+    },
+
+
     "green": {
       "light": {
         "value": "#ECFADC"
