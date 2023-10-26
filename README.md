@@ -340,14 +340,16 @@ Beacon-DS is the Beacon Design System project, a comprehensive framework that in
 
 ## 💻 Stack
 
-* [next](https://nextjs.org/): Framework for building server-rendered React applications.
-* [react](https://reactjs.org/): JavaScript library for building user interfaces.
-* [react-dom](https://reactjs.org/docs/react-dom.html): Entry point to the DOM and server renderers for React.
+Here's the corrected content:
+
+* [Next.js](https://nextjs.org/): Framework for building server-rendered React applications.
+* [React](https://reactjs.org/): JavaScript library for building user interfaces.
+* [radix ui](https://www.radix-ui.com/): A low-level UI primitive library for building high-quality, accessible design systems without sacrificing style.
 * [typescript](https://www.typescriptlang.org/): Typed superset of JavaScript that compiles to plain JavaScript.
-* [rotational/beacon-core](https://github.com/rotationalio/beacon-core): Library for handling authentication in TypeScript projects.
-* [nextra](https://nextra.vercel.app/): Static site generator for Next.js, providing additional features like Markdown support.
+* [react table](https://react-table.tanstack.com/): Hooks for building lightweight, fast, and extendable data-grid tables for React.
 * [nextra-theme-docs](https://nextra-theme-docs.vercel.app/): Theme for Nextra that adds documentation-specific features.
-* [types/node](https://www.npmjs.com/package/@types/node): TypeScript definitions for Node.js.
+* [Headless UI](https://headlessui.dev/): Completely unstyled, fully accessible UI components.
+* [@types/node](https://www.npmjs.com/package/@types/node): TypeScript definitions for Node.js.
 
 
 ## ⚙️ Setting Up
@@ -378,11 +380,6 @@ yarn install
 yarn build
 ```
 
-4.Start the development mode:
-
-```bash
-yarn dev
-```
 
 ## Run Storybook
 
