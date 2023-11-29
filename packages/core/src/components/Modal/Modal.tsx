@@ -23,7 +23,7 @@ function Modal(props: ModalProps, ref: React.ForwardedRef<HTMLDivElement>) {
         size={size}
         fullScreen={fullScreen}
         className={mergeClassnames(
-          'overflow-scroll w-[80vw] md:[60vw] lg:max-w-[50vw]',
+          'overflow-scroll w-[80vw] md:max-w-[40vw] lg:max-w-[50vw]',
           containerClassName
         )}
       >
